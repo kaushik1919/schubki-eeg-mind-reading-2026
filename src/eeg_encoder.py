@@ -43,6 +43,43 @@ class EEGNetEncoder(nn.Module):
         return F.normalize(self.head(h.flatten(1)), dim=-1)
 
 
+class EEGTransformerEncoder(nn.Module):
+    """Small BERT-style temporal EEG encoder for the low-data regime.
+
+    The channel-mixing adapter handles subject-specific sensor geometry; a
+    strided convolution makes non-overlapping temporal EEG tokens, and a
+    compact Transformer aggregates them into one retrieval embedding.
+    """
+
+    def __init__(self, n_channels: int = 17, n_samples: int = 300, patch_samples: int = 10,
+                 model_dim: int = 128, depth: int = 4, heads: int = 4, dropout: float = 0.25,
+                 embed_dim: int = 128, n_subjects: int | None = None) -> None:
+        super().__init__()
+        if n_samples % patch_samples:
+            raise ValueError("n_samples must divide exactly into temporal patches")
+        self.adapter = SubjectAdapter(n_subjects, n_channels) if n_subjects else None
+        self.patch = nn.Conv1d(n_channels, model_dim, kernel_size=patch_samples, stride=patch_samples)
+        tokens = n_samples // patch_samples
+        self.cls = nn.Parameter(torch.zeros(1, 1, model_dim))
+        self.position = nn.Parameter(torch.zeros(1, tokens + 1, model_dim))
+        layer = nn.TransformerEncoderLayer(model_dim, heads, dim_feedforward=2 * model_dim, dropout=dropout,
+                                           activation="gelu", batch_first=True, norm_first=True)
+        self.transformer = nn.TransformerEncoder(layer, num_layers=depth)
+        self.norm = nn.LayerNorm(model_dim)
+        self.head = nn.Linear(model_dim, embed_dim)
+        nn.init.trunc_normal_(self.cls, std=0.02); nn.init.trunc_normal_(self.position, std=0.02)
+
+    def forward(self, x: torch.Tensor, subject: torch.Tensor | None = None) -> torch.Tensor:
+        if self.adapter is not None:
+            if subject is None:
+                raise ValueError("subject indices required when adapters are enabled")
+            x = self.adapter(x, subject)
+        tokens = self.patch(x).transpose(1, 2)
+        cls = self.cls.expand(len(x), -1, -1)
+        h = self.transformer(torch.cat([cls, tokens], dim=1) + self.position)
+        return F.normalize(self.head(self.norm(h[:, 0])), dim=-1)
+
+
 class VideoHead(nn.Module):
     """Learnable linear projection of frozen stimulus embeddings into the shared space."""
 

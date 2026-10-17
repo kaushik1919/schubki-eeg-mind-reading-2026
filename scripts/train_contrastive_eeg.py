@@ -6,6 +6,7 @@ Variants (identical folds, hyperparameters and inner validation):
   B  shared encoder over all subjects, naive CLIP loss (same-video pairs are negatives)
   C  shared encoder + per-subject spatial adapters, naive CLIP loss
   D  shared encoder + adapters + multi-positive loss (dedup videos, cross-subject EEG-EEG positives)
+  E  compact temporal EEG Transformer + adapters + the same multi-positive loss
 
 Leakage rules: every recording of an outer-fold video is removed from training
 for all subjects; inner validation (early stopping, hyperparameter search)
@@ -29,7 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.contrastive_learning import VideoGroupedBatches, multi_positive_loss, naive_infonce, retrieval_positions
 from src.controlled_cv import common_ids, disjoint_inner_folds
 from src.data import load_training_subject
-from src.eeg_encoder import EEGNetEncoder, VideoHead, n_parameters
+from src.eeg_encoder import EEGNetEncoder, EEGTransformerEncoder, VideoHead, n_parameters
 
 SUBJECTS = ["01", "02", "03", "04", "05", "06"]
 OUTER_SEED = 2040
@@ -68,8 +69,14 @@ def positions_by_subject(enc, head, X, S, V, feats, mask, device, adapters):
 
 def train_one(cfg, X, S, V, feats, train_mask, val_mask, device, seed, variant, log, make_encoder=None):
     torch.manual_seed(seed); np.random.seed(seed)
-    adapters = variant in ("C", "D")
-    enc = (make_encoder() if make_encoder else EEGNetEncoder(dropout=cfg["dropout"], embed_dim=cfg["embed_dim"], n_subjects=len(SUBJECTS) if adapters else None)).to(device)
+    adapters = variant in ("C", "D", "E")
+    if make_encoder:
+        enc = make_encoder()
+    elif variant == "E":
+        enc = EEGTransformerEncoder(dropout=cfg["dropout"], embed_dim=cfg["embed_dim"], n_subjects=len(SUBJECTS)).to(device)
+    else:
+        enc = EEGNetEncoder(dropout=cfg["dropout"], embed_dim=cfg["embed_dim"], n_subjects=len(SUBJECTS) if adapters else None).to(device)
+    enc = enc.to(device)
     head = VideoHead(feats.shape[1], cfg["embed_dim"]).to(device)
     logit_scale = torch.nn.Parameter(torch.tensor(np.log(1 / cfg["temperature"]), dtype=torch.float32, device=device))
     params = list(enc.parameters()) + list(head.parameters()) + [logit_scale]
@@ -88,7 +95,7 @@ def train_one(cfg, X, S, V, feats, train_mask, val_mask, device, seed, variant, 
             jitter = cfg.get("amp_jitter", 0.1)
             if jitter: x = x * torch.empty(len(x), *([1] * (x.dim() - 1)), device=device).uniform_(1 - jitter, 1 + jitter)
             e = enc(x, St[b] if adapters else None); scale = logit_scale.clamp(max=np.log(100.0)).exp()
-            if variant in ("D", "P"):
+            if variant in ("D", "E", "P"):
                 uniq, inv = torch.unique(Vt[b], return_inverse=True)
                 loss = multi_positive_loss(e, head(F[uniq - 1]), inv, scale, subject=St[b], eeg_eeg_weight=cfg["eeg_eeg_weight"])
             else:

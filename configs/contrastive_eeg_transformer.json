@@ -1,0 +1,22 @@
+{
+  "id": "E_small_temporal_eeg_transformer",
+  "status": "predeclared exploratory model; no development-test evaluation permitted before train-only review",
+  "target_features": "features/all_train_clip_intermediate_block8.npy",
+  "inner_val_fraction": 0.1,
+  "base": {
+    "seed": 2070,
+    "embed_dim": 128,
+    "dropout": 0.25,
+    "lr": 0.0005,
+    "weight_decay": 0.1,
+    "temperature": 0.07,
+    "videos_per_batch": 64,
+    "max_epochs": 160,
+    "patience": 20,
+    "grad_clip": 1.0,
+    "max_shift": 2,
+    "eeg_eeg_weight": 0.5
+  },
+  "search_grid": [],
+  "selection_rule": "Compare E against the existing CNN D only on identical video-grouped train-only folds. Fuse only after an explicit fixed rule is recorded."
+}

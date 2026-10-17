@@ -1,10 +1,12 @@
 """Positive pairs, leakage of average-response targets, subject mapping and shapes."""
 import numpy as np
+import pytest
 import torch
 import torch.nn.functional as F
 
 from src.cross_subject_learning import (AverageTargetCoder, RidgeReadout, cross_subject_positive_mask, eeg_eeg_supcon,
                                         loso_average_targets, mean_embedding_per_video)
+from src.eeg_encoder import EEGTransformerEncoder
 
 
 def test_positive_mask_is_same_video_different_subject_only():
@@ -47,3 +49,13 @@ def test_mean_embedding_per_video_groups_by_explicit_ids():
     e = np.array([[1., 0.], [0., 1.], [1., 0.]]); V = np.array([5, 3, 5])
     vids, m = mean_embedding_per_video(e, V)
     assert vids.tolist() == [3, 5] and np.allclose(m, [[0, 1], [1, 0]])
+
+
+def test_small_transformer_encoder_needs_subjects_and_returns_normalized_embedding():
+    encoder = EEGTransformerEncoder(model_dim=32, depth=1, heads=4, embed_dim=16, n_subjects=2, dropout=0.0)
+    x, subject = torch.randn(3, 17, 300), torch.tensor([0, 1, 0])
+    with pytest.raises(ValueError):
+        encoder(x)
+    out = encoder(x, subject)
+    assert out.shape == (3, 16)
+    assert torch.allclose(out.norm(dim=1), torch.ones(3), atol=1e-5)
