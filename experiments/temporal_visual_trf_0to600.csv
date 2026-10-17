@@ -1,0 +1,7 @@
+experiment,subject,n_train,max_lag_ms,top1,top5,seconds,artifact
+temporal_visual_trf_0to600,01,866,600,0.0,0.049019607843137254,3.725295250002091,experiments/paired_predictions/temporal_visual_trf_0to600_seedresearch_sub01.npz
+temporal_visual_trf_0to600,02,870,600,0.0,0.058823529411764705,4.616846666001948,experiments/paired_predictions/temporal_visual_trf_0to600_seedresearch_sub02.npz
+temporal_visual_trf_0to600,03,859,600,0.00980392156862745,0.0196078431372549,3.8019133749985485,experiments/paired_predictions/temporal_visual_trf_0to600_seedresearch_sub03.npz
+temporal_visual_trf_0to600,04,845,600,0.0,0.058823529411764705,3.468243583000003,experiments/paired_predictions/temporal_visual_trf_0to600_seedresearch_sub04.npz
+temporal_visual_trf_0to600,05,850,600,0.029411764705882353,0.0784313725490196,3.4793049170002632,experiments/paired_predictions/temporal_visual_trf_0to600_seedresearch_sub05.npz
+temporal_visual_trf_0to600,06,748,600,0.0196078431372549,0.0784313725490196,3.0672401250012626,experiments/paired_predictions/temporal_visual_trf_0to600_seedresearch_sub06.npz
