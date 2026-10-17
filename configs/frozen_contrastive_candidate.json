@@ -1,0 +1,42 @@
+{
+ "id": "D_block8_ens5_plus_ModelC",
+ "status": "frozen 2026-10-17 before any development-test evaluation",
+ "preprocessing": {
+  "eeg": "scipy.signal.decimate(x, 5, ftype='fir', zero_phase=True) -> 17 x 300 at 100 Hz, full 0-3000 ms",
+  "normalisation": "per-subject per-channel z-score; mean/std over (recordings, time) of that subject's fit-train recordings only; applied unchanged to test EEG",
+  "test_row_order": "file order of tst/sub-XX_tst.npy, never sorted"
+ },
+ "decoder": {
+  "variant": "D",
+  "architecture": "src.eeg_encoder.EEGNetEncoder(f1=16, depth=2, f2=32, kernel=25, embed_dim=128, n_subjects=6) + VideoHead(768 -> 128)",
+  "subject_index": {"01": 0, "02": 1, "03": 2, "04": 3, "05": 4, "06": 5},
+  "loss": "src.contrastive_learning.multi_positive_loss, eeg_eeg_weight=0.5, cross-subject positives only",
+  "train_code": "scripts/train_contrastive_eeg.py::train_one",
+  "hyperparameters": {
+   "embed_dim": 128, "dropout": 0.25, "lr": 0.001, "weight_decay": 0.1, "temperature": 0.07,
+   "videos_per_batch": 64, "max_epochs": 200, "patience": 25, "grad_clip": 1.0, "max_shift": 2, "amp_jitter": 0.1, "eeg_eeg_weight": 0.5
+  },
+  "seeds": [2050, 2051, 2052, 2053, 2054],
+  "training_data": "all organizer training recordings of sub-01..sub-06 (trn/ only)",
+  "early_stopping": {"inner_val_fraction": 0.1, "inner_val_video_seed": 3100, "metric": "mean per-subject retrieval MRR among inner-validation training videos", "checkpoint": "best inner-validation epoch; no refit"},
+  "target_features": {"train": "features/all_train_clip_intermediate_block8.npy", "candidates": "features/test_clip_intermediate_block8.npy"},
+  "scoring": "cosine similarity of L2-normalised EEG and candidate embeddings",
+  "seed_ensemble": "mean over seeds of per-row z-scored scores",
+  "device": "mps"
+ },
+ "model_c": {"config": "configs/frozen_balanced.json", "implementation": "src.final_model.FrozenModelC fitted on all training recordings of each subject"},
+ "fusion": {"formula": "0.5 * rowz(decoder_ensemble) + 0.5 * rowz(ModelC_fused)", "weights": [0.5, 0.5]},
+ "ranking": "src.retrieval.rank_candidates with candidate IDs 1001..1102 ascending",
+ "confirmation": {
+  "subjects": ["01", "02", "03", "04"],
+  "labels_used_only_for_metrics": "tst_stim/sub-XX_tst_stim.npy",
+  "command": ".venv/bin/python scripts/confirm_frozen_candidate.py --expected-config-sha256 <sha>",
+  "outputs": [
+   "outputs/contrastive_candidate/models/seed{2050..2054}.pt",
+   "outputs/contrastive_candidate/normalisation.npz",
+   "outputs/contrastive_candidate/dev_scores/sub-0{1..4}_scores.npz",
+   "outputs/contrastive_candidate/dev_scores/PREDICTIONS.sha256",
+   "experiments/frozen_candidate_confirmation.json"
+  ]
+ }
+}
