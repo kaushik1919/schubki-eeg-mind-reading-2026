@@ -47,3 +47,6 @@ outputs/final_model_c/scores/
 # Temporary outputs
 tmp/
 *.tmp
+
+# Temporal audio caches
+features/*.npz
