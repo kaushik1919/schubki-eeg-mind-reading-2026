@@ -1,0 +1,42 @@
+{
+ "rule": "max fold-0 inner-validation MRR for variant D; tie -> earlier grid entry",
+ "candidates": {
+  "0": {
+   "config": {
+    "dropout": 0.25,
+    "weight_decay": 0.01
+   },
+   "inner_val_mrr": 0.13556982205687143,
+   "best_epoch": 20
+  },
+  "1": {
+   "config": {
+    "dropout": 0.5,
+    "weight_decay": 0.01
+   },
+   "inner_val_mrr": 0.12793494640601266,
+   "best_epoch": 19
+  },
+  "2": {
+   "config": {
+    "dropout": 0.25,
+    "weight_decay": 0.1
+   },
+   "inner_val_mrr": 0.13560029430176757,
+   "best_epoch": 20
+  },
+  "3": {
+   "config": {
+    "dropout": 0.5,
+    "weight_decay": 0.1
+   },
+   "inner_val_mrr": 0.1289967978929634,
+   "best_epoch": 19
+  }
+ },
+ "selected": 2,
+ "selected_config": {
+  "dropout": 0.25,
+  "weight_decay": 0.1
+ }
+}

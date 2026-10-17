@@ -1,0 +1,43 @@
+{
+ "fold": 0,
+ "variant": "D",
+ "best_epoch": 20,
+ "inner_val_mrr": 0.1355798115723262,
+ "test_mean_pairwise_cos": 0.060860391706228256,
+ "test_effective_rank": 97.67056274414062,
+ "embed_dim": 128,
+ "subject_decoding_acc_test_embeddings": 0.20098627215780357,
+ "subject_decoding_acc_raw_eeg": 0.19280287884846062,
+ "chance_subject": 0.16666666666666666,
+ "cross_subject_eeg_ident_top1_embedding": 0.059477124183006526,
+ "cross_subject_eeg_ident_top1_raw": 0.027124183006535945,
+ "train_probe_mean_pairwise_cos": 0.06616593152284622,
+ "train_probe_effective_rank": 97.2955322265625,
+ "loss_history_tail": [
+  [
+   41,
+   NaN,
+   0.12994328388095108
+  ],
+  [
+   42,
+   NaN,
+   0.12155588236714891
+  ],
+  [
+   43,
+   NaN,
+   0.11765580302790278
+  ],
+  [
+   44,
+   NaN,
+   0.11893536241605496
+  ],
+  [
+   45,
+   NaN,
+   0.12106043091426931
+  ]
+ ]
+}

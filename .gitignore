@@ -50,3 +50,6 @@ tmp/
 
 # Temporal audio caches
 features/*.npz
+
+# Third-party code and pretrained weights (fetched on demand)
+third_party/
