@@ -1,15 +1,34 @@
 {
- "status": "exploratory candidate, NOT frozen for submission; awaiting one pre-registered confirmation",
+ "status": "superseded by configs/frozen_contrastive_candidate.json (frozen; dev-subject check in experiments/frozen_candidate_confirmation_report.md)",
  "id": "D_block8_ens5_plus_ModelC",
  "decoder": {
   "variant": "D (shared EEGNet + per-subject adapters + multi-positive loss)",
   "train_config": "configs/contrastive_eeg.json (base)",
   "target_features": "features/all_train_clip_intermediate_block8.npy",
-  "seeds": [2050, 2051, 2052, 2053, 2054],
+  "seeds": [
+   2050,
+   2051,
+   2052,
+   2053,
+   2054
+  ],
   "seed_ensemble": "mean of per-row z-scored cosine scores"
  },
- "fusion": {"decoder_ensemble": 0.5, "frozen_model_c": 0.5, "normalisation": "per-row z-score"},
- "exploratory_result_6fold": {"top1": 0.0564, "top5": 0.2032, "mrr": 0.1468, "model_c_same_folds": {"top1": 0.0297, "top5": 0.1367, "mrr": 0.1021}},
+ "fusion": {
+  "decoder_ensemble": 0.5,
+  "frozen_model_c": 0.5,
+  "normalisation": "per-row z-score"
+ },
+ "exploratory_result_6fold": {
+  "top1": 0.0564,
+  "top5": 0.2032,
+  "mrr": 0.1468,
+  "model_c_same_folds": {
+   "top1": 0.0297,
+   "top5": 0.1367,
+   "mrr": 0.1021
+  }
+ },
  "commands": [
   ".venv/bin/python scripts/train_contrastive_eeg.py --variants D --target features/all_train_clip_intermediate_block8.npy --tag-suffix _block8",
   "for s in 2051 2052 2053 2054; do .venv/bin/python scripts/train_contrastive_eeg.py --variants D --seed $s --target features/all_train_clip_intermediate_block8.npy --tag-suffix _block8_s$s; done",

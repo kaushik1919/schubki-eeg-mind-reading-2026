@@ -1,0 +1,32 @@
+{
+ "status": "exploratory only; not frozen, not evaluated on development test recordings",
+ "id": "B_eeg_eeg_ens5_plus_ModelC",
+ "decoder": {
+  "objective": "src.cross_subject_learning.eeg_eeg_supcon (cross-subject same-video positives)",
+  "architecture": "EEGNetEncoder + subject adapters (as frozen candidate)",
+  "train_config": "configs/cross_subject_eeg.json (base)",
+  "seeds": [
+   2050,
+   2051,
+   2052,
+   2053,
+   2054
+  ],
+  "readout": "src.cross_subject_learning.RidgeReadout: block-8 CLIP features -> mean fit-train EEG embedding per video",
+  "seed_ensemble": "mean of per-row z-scored cosine scores"
+ },
+ "fusion": {
+  "decoder_ensemble": 0.5,
+  "frozen_model_c": 0.5
+ },
+ "exploratory_6fold": {
+  "top1": 0.0575,
+  "top5": 0.2241,
+  "mrr": 0.1556,
+  "frozen_candidate_same_folds": {
+   "top1": 0.0564,
+   "top5": 0.2032,
+   "mrr": 0.1468
+  }
+ }
+}

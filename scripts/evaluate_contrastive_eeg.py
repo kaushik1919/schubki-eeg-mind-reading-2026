@@ -33,7 +33,12 @@ def main() -> None:
     ap.add_argument("--out", default="experiments/contrastive_eeg/summary.json")
     a = ap.parse_args(); d = Path(a.dir)
     sources = {"ModelC": lambda o, s: load_scores(Path(a.modelc_dir), "ModelC__50_600", o, s)}
-    for v in a.variants: sources[v] = (lambda v: lambda o, s: load_scores(d / v, None, o, s))(v)
+    vdirs = {}
+    for v in a.variants:
+        name, path = (v.split(":", 1) + [None])[:2] if ":" in v else (v, None)
+        vdirs[name] = Path(path) if path else d / name
+        sources[name] = (lambda p: lambda o, s: load_scores(p, None, o, s))(vdirs[name])
+    a.variants = list(vdirs)
     for spec in a.ensembles:
         name, parts = spec.split("="); parts = parts.split(",")
         def ens(o, s, parts=parts):
@@ -64,7 +69,8 @@ def main() -> None:
                   "top5_WL": (t["top5_wins"], t["top5_losses"]), "top5_sign_p": exact_sign_test(t["top5_wins"], t["top5_losses"]), "score_corr_with_ModelC": float(np.mean(corr[name]))}
         res[name] = r
     for v in a.variants:
-        logs = [json.loads((d / v / f"fold{o}.json").read_text()) for o in range(6)]
+        logs = [json.loads((vdirs[v] / f"fold{o}.json").read_text()) for o in range(6)]
+        if "logs" not in logs[0]: continue
         lg = [l for rec in logs for l in rec["logs"].values()]
         res[v]["compute"] = {"train_s_per_fold": float(np.mean([r["train_s"] for r in logs])), "eval_s_per_fold": float(np.mean([r["eval_s"] for r in logs])),
                              "n_params_per_model": int(lg[0]["n_params"]), "n_models_per_fold": len(logs[0]["logs"]),
@@ -79,7 +85,8 @@ def main() -> None:
     print("\nper subject top1/top5/mrr")
     for n, r in res.items():
         print(n, " | ".join(f"{s}: {r['per_subject'][s]['top1']:.1%}/{r['per_subject'][s]['top5']:.1%}/{r['per_subject'][s]['mrr']:.3f}" for s in SUBJECTS))
-    for v in a.variants: print(v, res[v]["compute"])
+    for v in a.variants:
+        if "compute" in res[v]: print(v, res[v]["compute"])
 
 
 if __name__ == "__main__":

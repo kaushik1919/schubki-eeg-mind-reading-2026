@@ -1,0 +1,19 @@
+{
+ "inner_val_fraction": 0.1,
+ "base": {
+  "seed": 2050,
+  "embed_dim": 128,
+  "dropout": 0.25,
+  "lr": 0.001,
+  "weight_decay": 0.1,
+  "temperature": 0.07,
+  "videos_per_batch": 64,
+  "max_epochs": 200,
+  "patience": 25,
+  "grad_clip": 1.0,
+  "max_shift": 2
+ },
+ "grid_w_e2e": [1.0, 2.0],
+ "grid_lam_avg": [0.25, 1.0],
+ "notes": "Architecture and optimiser identical to configs/frozen_contrastive_candidate.json; only the objective changes."
+}
