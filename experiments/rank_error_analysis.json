@@ -1,0 +1,2451 @@
+{
+ "confirmation": {
+  "configs": {
+   "final": {
+    "overall": {
+     "n": 612,
+     "top1": 0.024509803921568627,
+     "top5": 0.12254901960784313,
+     "mrr": 0.08869045305248431,
+     "median_rank": 34.0,
+     "mean_rank": 39.037581699346404
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 0,
+     "top1_losses": 0,
+     "top5_wins": 0,
+     "top5_losses": 0,
+     "promoted_2to5_to_1": 0,
+     "promoted_outside5_to_1": 0,
+     "demoted_top5_to_outside": 0,
+     "demoted_1_to_2to5": 0,
+     "rank_improved": 0,
+     "rank_worsened": 0,
+     "rank_equal": 612
+    },
+    "top1_sign_test_p": 1.0,
+    "top5_sign_test_p": 1.0,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "top5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "mrr": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 102,
+      "top1": 0.049019607843137254,
+      "top5": 0.14705882352941177,
+      "mrr": 0.1177008294962455,
+      "median_rank": 31.5,
+      "mean_rank": 35.55882352941177
+     },
+     "02": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.19607843137254902,
+      "mrr": 0.12071667031869666,
+      "median_rank": 25.5,
+      "mean_rank": 31.186274509803923
+     },
+     "03": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.14705882352941177,
+      "mrr": 0.10270571529862096,
+      "median_rank": 37.5,
+      "mean_rank": 41.754901960784316
+     },
+     "04": {
+      "n": 102,
+      "top1": 0.0,
+      "top5": 0.058823529411764705,
+      "mrr": 0.05141232251570447,
+      "median_rank": 36.0,
+      "mean_rank": 40.705882352941174
+     },
+     "05": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.10784313725490197,
+      "mrr": 0.08610905074420276,
+      "median_rank": 40.5,
+      "mean_rank": 40.81372549019608
+     },
+     "06": {
+      "n": 102,
+      "top1": 0.0,
+      "top5": 0.0784313725490196,
+      "mrr": 0.0534981299414356,
+      "median_rank": 38.5,
+      "mean_rank": 44.205882352941174
+     }
+    },
+    "per_fold": {
+     "confirmation": {
+      "n": 612,
+      "top1": 0.024509803921568627,
+      "top5": 0.12254901960784313,
+      "mrr": 0.08869045305248431,
+      "median_rank": 34.0,
+      "mean_rank": 39.037581699346404
+     }
+    },
+    "rank_histogram": {
+     "1": 15,
+     "2-5": 60,
+     "6-10": 41,
+     "11-25": 114,
+     "26-102": 382
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 102
+     },
+     "02": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 102
+     },
+     "03": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 102
+     },
+     "04": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 102
+     },
+     "05": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 102
+     },
+     "06": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 102
+     }
+    },
+    "per_fold_transitions": {
+     "confirmation": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 612
+     }
+    }
+   },
+   "block8": {
+    "overall": {
+     "n": 612,
+     "top1": 0.03104575163398693,
+     "top5": 0.09967320261437909,
+     "mrr": 0.09232680710270856,
+     "median_rank": 37.0,
+     "mean_rank": 39.799019607843135
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 18,
+     "top1_losses": 14,
+     "top5_wins": 47,
+     "top5_losses": 61,
+     "promoted_2to5_to_1": 2,
+     "promoted_outside5_to_1": 16,
+     "demoted_top5_to_outside": 61,
+     "demoted_1_to_2to5": 3,
+     "rank_improved": 300,
+     "rank_worsened": 296,
+     "rank_equal": 16
+    },
+    "top1_sign_test_p": 0.5966148958541453,
+    "top5_sign_test_p": 0.210765793978782,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.006535947712418301,
+      -0.008169934640522876,
+      0.026143790849673203
+     ],
+     "top5": [
+      -0.02287581699346405,
+      -0.06703431372549015,
+      0.01797385620915033
+     ],
+     "mrr": [
+      0.0036363540502242346,
+      -0.014166418052224182,
+      0.02650484426618437
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.14705882352941177,
+      "mrr": 0.11590836900830205,
+      "median_rank": 24.5,
+      "mean_rank": 33.568627450980394
+     },
+     "02": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.0784313725490196,
+      "mrr": 0.09336446453957216,
+      "median_rank": 34.5,
+      "mean_rank": 38.42156862745098
+     },
+     "03": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.13725490196078433,
+      "mrr": 0.10037967881735817,
+      "median_rank": 37.0,
+      "mean_rank": 39.05882352941177
+     },
+     "04": {
+      "n": 102,
+      "top1": 0.049019607843137254,
+      "top5": 0.11764705882352941,
+      "mrr": 0.1054454600300509,
+      "median_rank": 44.0,
+      "mean_rank": 41.490196078431374
+     },
+     "05": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.08823529411764706,
+      "mrr": 0.08728565673743743,
+      "median_rank": 36.5,
+      "mean_rank": 41.22549019607843
+     },
+     "06": {
+      "n": 102,
+      "top1": 0.00980392156862745,
+      "top5": 0.029411764705882353,
+      "mrr": 0.05157721348353066,
+      "median_rank": 41.5,
+      "mean_rank": 45.029411764705884
+     }
+    },
+    "per_fold": {
+     "confirmation": {
+      "n": 612,
+      "top1": 0.03104575163398693,
+      "top5": 0.09967320261437909,
+      "mrr": 0.09232680710270856,
+      "median_rank": 37.0,
+      "mean_rank": 39.799019607843135
+     }
+    },
+    "rank_histogram": {
+     "1": 19,
+     "2-5": 42,
+     "6-10": 49,
+     "11-25": 124,
+     "26-102": 378
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 3,
+      "top1_losses": 5,
+      "top5_wins": 12,
+      "top5_losses": 12,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 12,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 55,
+      "rank_worsened": 46,
+      "rank_equal": 1
+     },
+     "02": {
+      "top1_wins": 3,
+      "top1_losses": 2,
+      "top5_wins": 4,
+      "top5_losses": 16,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 16,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 40,
+      "rank_worsened": 56,
+      "rank_equal": 6
+     },
+     "03": {
+      "top1_wins": 3,
+      "top1_losses": 4,
+      "top5_wins": 10,
+      "top5_losses": 11,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 11,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 59,
+      "rank_worsened": 41,
+      "rank_equal": 2
+     },
+     "04": {
+      "top1_wins": 5,
+      "top1_losses": 0,
+      "top5_wins": 11,
+      "top5_losses": 5,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 5,
+      "demoted_top5_to_outside": 5,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 46,
+      "rank_worsened": 52,
+      "rank_equal": 4
+     },
+     "05": {
+      "top1_wins": 3,
+      "top1_losses": 3,
+      "top5_wins": 7,
+      "top5_losses": 9,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 9,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 49,
+      "rank_worsened": 52,
+      "rank_equal": 1
+     },
+     "06": {
+      "top1_wins": 1,
+      "top1_losses": 0,
+      "top5_wins": 3,
+      "top5_losses": 8,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 8,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 51,
+      "rank_worsened": 49,
+      "rank_equal": 2
+     }
+    },
+    "per_fold_transitions": {
+     "confirmation": {
+      "top1_wins": 18,
+      "top1_losses": 14,
+      "top5_wins": 47,
+      "top5_losses": 61,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 16,
+      "demoted_top5_to_outside": 61,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 300,
+      "rank_worsened": 296,
+      "rank_equal": 16
+     }
+    }
+   },
+   "final+block8": {
+    "overall": {
+     "n": 612,
+     "top1": 0.032679738562091505,
+     "top5": 0.10947712418300654,
+     "mrr": 0.09554503064314018,
+     "median_rank": 32.0,
+     "mean_rank": 36.70261437908497
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 13,
+     "top1_losses": 8,
+     "top5_wins": 30,
+     "top5_losses": 38,
+     "promoted_2to5_to_1": 9,
+     "promoted_outside5_to_1": 4,
+     "demoted_top5_to_outside": 38,
+     "demoted_1_to_2to5": 7,
+     "rank_improved": 329,
+     "rank_worsened": 265,
+     "rank_equal": 18
+    },
+    "top1_sign_test_p": 0.38331031799316406,
+    "top5_sign_test_p": 0.39612484029702977,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.008169934640522876,
+      -0.004901960784313725,
+      0.02287581699346405
+     ],
+     "top5": [
+      -0.013071895424836603,
+      -0.04575163398692811,
+      0.016339869281045753
+     ],
+     "mrr": [
+      0.006854577590655835,
+      -0.006628979845428676,
+      0.02184500568869656
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.18627450980392157,
+      "mrr": 0.11535399438584902,
+      "median_rank": 24.0,
+      "mean_rank": 30.607843137254903
+     },
+     "02": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.11764705882352941,
+      "mrr": 0.10316705807979577,
+      "median_rank": 26.0,
+      "mean_rank": 31.725490196078432
+     },
+     "03": {
+      "n": 102,
+      "top1": 0.049019607843137254,
+      "top5": 0.12745098039215685,
+      "mrr": 0.11726773779499428,
+      "median_rank": 32.0,
+      "mean_rank": 37.94117647058823
+     },
+     "04": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.0784313725490196,
+      "mrr": 0.09081068134505405,
+      "median_rank": 38.5,
+      "mean_rank": 37.48039215686274
+     },
+     "05": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.10784313725490197,
+      "mrr": 0.0940161147378336,
+      "median_rank": 31.0,
+      "mean_rank": 38.78431372549019
+     },
+     "06": {
+      "n": 102,
+      "top1": 0.0,
+      "top5": 0.0392156862745098,
+      "mrr": 0.052654597515314254,
+      "median_rank": 41.0,
+      "mean_rank": 43.6764705882353
+     }
+    },
+    "per_fold": {
+     "confirmation": {
+      "n": 612,
+      "top1": 0.032679738562091505,
+      "top5": 0.10947712418300654,
+      "mrr": 0.09554503064314018,
+      "median_rank": 32.0,
+      "mean_rank": 36.70261437908497
+     }
+    },
+    "rank_histogram": {
+     "1": 20,
+     "2-5": 47,
+     "6-10": 63,
+     "11-25": 130,
+     "26-102": 352
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 0,
+      "top1_losses": 2,
+      "top5_wins": 9,
+      "top5_losses": 5,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 5,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 61,
+      "rank_worsened": 35,
+      "rank_equal": 6
+     },
+     "02": {
+      "top1_wins": 3,
+      "top1_losses": 2,
+      "top5_wins": 3,
+      "top5_losses": 11,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 11,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 48,
+      "rank_worsened": 50,
+      "rank_equal": 4
+     },
+     "03": {
+      "top1_wins": 4,
+      "top1_losses": 3,
+      "top5_wins": 6,
+      "top5_losses": 8,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 8,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 60,
+      "rank_worsened": 40,
+      "rank_equal": 2
+     },
+     "04": {
+      "top1_wins": 4,
+      "top1_losses": 0,
+      "top5_wins": 5,
+      "top5_losses": 3,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 2,
+      "demoted_top5_to_outside": 3,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 56,
+      "rank_worsened": 45,
+      "rank_equal": 1
+     },
+     "05": {
+      "top1_wins": 2,
+      "top1_losses": 1,
+      "top5_wins": 5,
+      "top5_losses": 5,
+      "promoted_2to5_to_1": 1,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 5,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 49,
+      "rank_worsened": 49,
+      "rank_equal": 4
+     },
+     "06": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 2,
+      "top5_losses": 6,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 6,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 55,
+      "rank_worsened": 46,
+      "rank_equal": 1
+     }
+    },
+    "per_fold_transitions": {
+     "confirmation": {
+      "top1_wins": 13,
+      "top1_losses": 8,
+      "top5_wins": 30,
+      "top5_losses": 38,
+      "promoted_2to5_to_1": 9,
+      "promoted_outside5_to_1": 4,
+      "demoted_top5_to_outside": 38,
+      "demoted_1_to_2to5": 7,
+      "rank_improved": 329,
+      "rank_worsened": 265,
+      "rank_equal": 18
+     }
+    }
+   },
+   "block8+audio": {
+    "overall": {
+     "n": 612,
+     "top1": 0.029411764705882353,
+     "top5": 0.11274509803921569,
+     "mrr": 0.09431087315131396,
+     "median_rank": 36.0,
+     "mean_rank": 39.23202614379085
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 17,
+     "top1_losses": 14,
+     "top5_wins": 52,
+     "top5_losses": 58,
+     "promoted_2to5_to_1": 1,
+     "promoted_outside5_to_1": 16,
+     "demoted_top5_to_outside": 58,
+     "demoted_1_to_2to5": 4,
+     "rank_improved": 307,
+     "rank_worsened": 298,
+     "rank_equal": 7
+    },
+    "top1_sign_test_p": 0.720100131817162,
+    "top5_sign_test_p": 0.6337556480191587,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.004901960784313725,
+      -0.011437908496732027,
+      0.02777777777777778
+     ],
+     "top5": [
+      -0.009803921568627453,
+      -0.06045751633986928,
+      0.03758169934640523
+     ],
+     "mrr": [
+      0.005620420098829629,
+      -0.01987139519128522,
+      0.03434229753712056
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.19607843137254902,
+      "mrr": 0.11923890120094698,
+      "median_rank": 26.5,
+      "mean_rank": 33.64705882352941
+     },
+     "02": {
+      "n": 102,
+      "top1": 0.0196078431372549,
+      "top5": 0.0784313725490196,
+      "mrr": 0.07795136611067402,
+      "median_rank": 33.0,
+      "mean_rank": 38.07843137254902
+     },
+     "03": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.13725490196078433,
+      "mrr": 0.10397462484643237,
+      "median_rank": 37.5,
+      "mean_rank": 38.450980392156865
+     },
+     "04": {
+      "n": 102,
+      "top1": 0.058823529411764705,
+      "top5": 0.12745098039215685,
+      "mrr": 0.11756369629253687,
+      "median_rank": 44.5,
+      "mean_rank": 40.51960784313726
+     },
+     "05": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.10784313725490197,
+      "mrr": 0.09356832639528687,
+      "median_rank": 34.5,
+      "mean_rank": 40.529411764705884
+     },
+     "06": {
+      "n": 102,
+      "top1": 0.00980392156862745,
+      "top5": 0.029411764705882353,
+      "mrr": 0.053568324062006636,
+      "median_rank": 40.0,
+      "mean_rank": 44.166666666666664
+     }
+    },
+    "per_fold": {
+     "confirmation": {
+      "n": 612,
+      "top1": 0.029411764705882353,
+      "top5": 0.11274509803921569,
+      "mrr": 0.09431087315131396,
+      "median_rank": 36.0,
+      "mean_rank": 39.23202614379085
+     }
+    },
+    "rank_histogram": {
+     "1": 18,
+     "2-5": 51,
+     "6-10": 52,
+     "11-25": 115,
+     "26-102": 376
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 3,
+      "top1_losses": 5,
+      "top5_wins": 16,
+      "top5_losses": 11,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 11,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 56,
+      "rank_worsened": 45,
+      "rank_equal": 1
+     },
+     "02": {
+      "top1_wins": 1,
+      "top1_losses": 2,
+      "top5_wins": 4,
+      "top5_losses": 16,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 16,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 41,
+      "rank_worsened": 58,
+      "rank_equal": 3
+     },
+     "03": {
+      "top1_wins": 3,
+      "top1_losses": 4,
+      "top5_wins": 10,
+      "top5_losses": 11,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 11,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 56,
+      "rank_worsened": 45,
+      "rank_equal": 1
+     },
+     "04": {
+      "top1_wins": 6,
+      "top1_losses": 0,
+      "top5_wins": 11,
+      "top5_losses": 4,
+      "promoted_2to5_to_1": 1,
+      "promoted_outside5_to_1": 5,
+      "demoted_top5_to_outside": 4,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 50,
+      "rank_worsened": 50,
+      "rank_equal": 2
+     },
+     "05": {
+      "top1_wins": 3,
+      "top1_losses": 3,
+      "top5_wins": 8,
+      "top5_losses": 8,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 8,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 52,
+      "rank_worsened": 50,
+      "rank_equal": 0
+     },
+     "06": {
+      "top1_wins": 1,
+      "top1_losses": 0,
+      "top5_wins": 3,
+      "top5_losses": 8,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 8,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 52,
+      "rank_worsened": 50,
+      "rank_equal": 0
+     }
+    },
+    "per_fold_transitions": {
+     "confirmation": {
+      "top1_wins": 17,
+      "top1_losses": 14,
+      "top5_wins": 52,
+      "top5_losses": 58,
+      "promoted_2to5_to_1": 1,
+      "promoted_outside5_to_1": 16,
+      "demoted_top5_to_outside": 58,
+      "demoted_1_to_2to5": 4,
+      "rank_improved": 307,
+      "rank_worsened": 298,
+      "rank_equal": 7
+     }
+    }
+   },
+   "final+block8+audio": {
+    "overall": {
+     "n": 612,
+     "top1": 0.032679738562091505,
+     "top5": 0.11601307189542484,
+     "mrr": 0.09808028009838551,
+     "median_rank": 31.5,
+     "mean_rank": 36.060457516339866
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 13,
+     "top1_losses": 8,
+     "top5_wins": 33,
+     "top5_losses": 37,
+     "promoted_2to5_to_1": 7,
+     "promoted_outside5_to_1": 6,
+     "demoted_top5_to_outside": 37,
+     "demoted_1_to_2to5": 7,
+     "rank_improved": 331,
+     "rank_worsened": 259,
+     "rank_equal": 22
+    },
+    "top1_sign_test_p": 0.38331031799316406,
+    "top5_sign_test_p": 0.7202027723528612,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.008169934640522876,
+      -0.0016339869281045752,
+      0.021241830065359475
+     ],
+     "top5": [
+      -0.006535947712418301,
+      -0.03921568627450981,
+      0.026143790849673203
+     ],
+     "mrr": [
+      0.00938982704590118,
+      -0.006118161102628157,
+      0.026769441627302815
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.18627450980392157,
+      "mrr": 0.1187122799471906,
+      "median_rank": 25.5,
+      "mean_rank": 30.598039215686274
+     },
+     "02": {
+      "n": 102,
+      "top1": 0.029411764705882353,
+      "top5": 0.11764705882352941,
+      "mrr": 0.09920977819620462,
+      "median_rank": 23.0,
+      "mean_rank": 31.42156862745098
+     },
+     "03": {
+      "n": 102,
+      "top1": 0.049019607843137254,
+      "top5": 0.12745098039215685,
+      "mrr": 0.11669692749841679,
+      "median_rank": 28.5,
+      "mean_rank": 36.78431372549019
+     },
+     "04": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.10784313725490197,
+      "mrr": 0.09796947078734168,
+      "median_rank": 38.0,
+      "mean_rank": 36.872549019607845
+     },
+     "05": {
+      "n": 102,
+      "top1": 0.0392156862745098,
+      "top5": 0.08823529411764706,
+      "mrr": 0.09891809784516903,
+      "median_rank": 32.5,
+      "mean_rank": 37.88235294117647
+     },
+     "06": {
+      "n": 102,
+      "top1": 0.0,
+      "top5": 0.06862745098039216,
+      "mrr": 0.056975126315990325,
+      "median_rank": 41.5,
+      "mean_rank": 42.80392156862745
+     }
+    },
+    "per_fold": {
+     "confirmation": {
+      "n": 612,
+      "top1": 0.032679738562091505,
+      "top5": 0.11601307189542484,
+      "mrr": 0.09808028009838551,
+      "median_rank": 31.5,
+      "mean_rank": 36.060457516339866
+     }
+    },
+    "rank_histogram": {
+     "1": 20,
+     "2-5": 51,
+     "6-10": 61,
+     "11-25": 136,
+     "26-102": 344
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 1,
+      "top1_losses": 2,
+      "top5_wins": 9,
+      "top5_losses": 5,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 5,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 59,
+      "rank_worsened": 37,
+      "rank_equal": 6
+     },
+     "02": {
+      "top1_wins": 2,
+      "top1_losses": 2,
+      "top5_wins": 3,
+      "top5_losses": 11,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 11,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 46,
+      "rank_worsened": 51,
+      "rank_equal": 5
+     },
+     "03": {
+      "top1_wins": 4,
+      "top1_losses": 3,
+      "top5_wins": 5,
+      "top5_losses": 7,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 2,
+      "demoted_top5_to_outside": 7,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 60,
+      "rank_worsened": 39,
+      "rank_equal": 3
+     },
+     "04": {
+      "top1_wins": 4,
+      "top1_losses": 0,
+      "top5_wins": 8,
+      "top5_losses": 3,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 2,
+      "demoted_top5_to_outside": 3,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 59,
+      "rank_worsened": 43,
+      "rank_equal": 0
+     },
+     "05": {
+      "top1_wins": 2,
+      "top1_losses": 1,
+      "top5_wins": 3,
+      "top5_losses": 5,
+      "promoted_2to5_to_1": 1,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 5,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 50,
+      "rank_worsened": 46,
+      "rank_equal": 6
+     },
+     "06": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 5,
+      "top5_losses": 6,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 6,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 57,
+      "rank_worsened": 43,
+      "rank_equal": 2
+     }
+    },
+    "per_fold_transitions": {
+     "confirmation": {
+      "top1_wins": 13,
+      "top1_losses": 8,
+      "top5_wins": 33,
+      "top5_losses": 37,
+      "promoted_2to5_to_1": 7,
+      "promoted_outside5_to_1": 6,
+      "demoted_top5_to_outside": 37,
+      "demoted_1_to_2to5": 7,
+      "rank_improved": 331,
+      "rank_worsened": 259,
+      "rank_equal": 22
+     }
+    }
+   }
+  },
+  "diagnostics": {
+   "final_top_margin_when_correct_mean": 0.2722089687983195,
+   "final_top_margin_when_wrong_mean": 0.29786636382091786,
+   "n_target_rank2to5_in_final": 60,
+   "z_gap_to_winner_promoted_by_fusion_mean": 0.4078181849585639,
+   "z_gap_to_winner_not_promoted_mean": 0.5105774075377221,
+   "block8_target_rank_when_fusion_demotes_out_of_top5": [
+    37,
+    56,
+    63,
+    55,
+    54,
+    72,
+    37,
+    62,
+    48,
+    55,
+    41,
+    33,
+    66,
+    28,
+    33,
+    54,
+    87,
+    50,
+    60,
+    37,
+    30,
+    26,
+    53,
+    36,
+    29,
+    50,
+    85,
+    32,
+    52,
+    3,
+    82,
+    51,
+    20,
+    28,
+    72,
+    32,
+    86,
+    46
+   ],
+   "block8_target_rank_when_fusion_promotes_2to5_to_1": [
+    1,
+    3,
+    1,
+    3,
+    9,
+    3,
+    8,
+    2,
+    5
+   ],
+   "final_vs_block8_rowwise_score_correlation_mean": 0.30474243630285613,
+   "final_vs_block8_rowwise_score_correlation_sd": 0.1271573561961548,
+   "final_vs_block8_top5_overlap_mean": 0.7009803921568627
+  }
+ },
+ "screening": {
+  "configs": {
+   "final": {
+    "overall": {
+     "n": 1836,
+     "top1": 0.024509803921568627,
+     "top5": 0.11982570806100218,
+     "mrr": 0.09074952678291405,
+     "median_rank": 35.0,
+     "mean_rank": 40.205882352941174
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 0,
+     "top1_losses": 0,
+     "top5_wins": 0,
+     "top5_losses": 0,
+     "promoted_2to5_to_1": 0,
+     "promoted_outside5_to_1": 0,
+     "demoted_top5_to_outside": 0,
+     "demoted_1_to_2to5": 0,
+     "rank_improved": 0,
+     "rank_worsened": 0,
+     "rank_equal": 1836
+    },
+    "top1_sign_test_p": 1.0,
+    "top5_sign_test_p": 1.0,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "top5": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "mrr": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 306,
+      "top1": 0.0392156862745098,
+      "top5": 0.1503267973856209,
+      "mrr": 0.11365609550063654,
+      "median_rank": 26.0,
+      "mean_rank": 33.13398692810458
+     },
+     "02": {
+      "n": 306,
+      "top1": 0.032679738562091505,
+      "top5": 0.1503267973856209,
+      "mrr": 0.10228700803213353,
+      "median_rank": 36.0,
+      "mean_rank": 40.03921568627451
+     },
+     "03": {
+      "n": 306,
+      "top1": 0.026143790849673203,
+      "top5": 0.13725490196078433,
+      "mrr": 0.10246975539467666,
+      "median_rank": 37.0,
+      "mean_rank": 39.84640522875817
+     },
+     "04": {
+      "n": 306,
+      "top1": 0.013071895424836602,
+      "top5": 0.08823529411764706,
+      "mrr": 0.07223031802813279,
+      "median_rank": 39.0,
+      "mean_rank": 43.31699346405229
+     },
+     "05": {
+      "n": 306,
+      "top1": 0.0196078431372549,
+      "top5": 0.10784313725490197,
+      "mrr": 0.08143928164603674,
+      "median_rank": 36.5,
+      "mean_rank": 41.23856209150327
+     },
+     "06": {
+      "n": 306,
+      "top1": 0.016339869281045753,
+      "top5": 0.08496732026143791,
+      "mrr": 0.07241470209586802,
+      "median_rank": 39.0,
+      "mean_rank": 43.66013071895425
+     }
+    },
+    "per_fold": {
+     "2026": {
+      "n": 612,
+      "top1": 0.024509803921568627,
+      "top5": 0.12254901960784313,
+      "mrr": 0.09395667086265298,
+      "median_rank": 33.5,
+      "mean_rank": 39.439542483660134
+     },
+     "2027": {
+      "n": 612,
+      "top1": 0.017973856209150325,
+      "top5": 0.10784313725490197,
+      "mrr": 0.0796297890546533,
+      "median_rank": 35.5,
+      "mean_rank": 41.282679738562095
+     },
+     "2028": {
+      "n": 612,
+      "top1": 0.03104575163398693,
+      "top5": 0.12908496732026145,
+      "mrr": 0.09866212043143581,
+      "median_rank": 34.0,
+      "mean_rank": 39.89542483660131
+     }
+    },
+    "rank_histogram": {
+     "1": 45,
+     "2-5": 175,
+     "6-10": 147,
+     "11-25": 357,
+     "26-102": 1112
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 306
+     },
+     "02": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 306
+     },
+     "03": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 306
+     },
+     "04": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 306
+     },
+     "05": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 306
+     },
+     "06": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 306
+     }
+    },
+    "per_fold_transitions": {
+     "2026": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 612
+     },
+     "2027": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 612
+     },
+     "2028": {
+      "top1_wins": 0,
+      "top1_losses": 0,
+      "top5_wins": 0,
+      "top5_losses": 0,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 0,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 0,
+      "rank_worsened": 0,
+      "rank_equal": 612
+     }
+    }
+   },
+   "block8": {
+    "overall": {
+     "n": 1836,
+     "top1": 0.02886710239651416,
+     "top5": 0.12091503267973856,
+     "mrr": 0.09608424296428553,
+     "median_rank": 33.0,
+     "mean_rank": 38.11274509803921
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 49,
+     "top1_losses": 41,
+     "top5_wins": 165,
+     "top5_losses": 163,
+     "promoted_2to5_to_1": 12,
+     "promoted_outside5_to_1": 37,
+     "demoted_top5_to_outside": 163,
+     "demoted_1_to_2to5": 7,
+     "rank_improved": 940,
+     "rank_worsened": 865,
+     "rank_equal": 31
+    },
+    "top1_sign_test_p": 0.46079247271897145,
+    "top5_sign_test_p": 0.9559777614333832,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.004357298474945533,
+      -0.0010893246187363848,
+      0.010348583877995643
+     ],
+     "top5": [
+      0.0010893246187363796,
+      -0.017429193899782137,
+      0.02178649237472766
+     ],
+     "mrr": [
+      0.005334716181371484,
+      -0.00498863254290301,
+      0.014920021445651131
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 306,
+      "top1": 0.0392156862745098,
+      "top5": 0.13398692810457516,
+      "mrr": 0.11566156081034107,
+      "median_rank": 26.0,
+      "mean_rank": 31.637254901960784
+     },
+     "02": {
+      "n": 306,
+      "top1": 0.029411764705882353,
+      "top5": 0.13398692810457516,
+      "mrr": 0.09941232521161542,
+      "median_rank": 31.5,
+      "mean_rank": 37.049019607843135
+     },
+     "03": {
+      "n": 306,
+      "top1": 0.02287581699346405,
+      "top5": 0.10784313725490197,
+      "mrr": 0.08653337621927736,
+      "median_rank": 34.5,
+      "mean_rank": 37.77777777777778
+     },
+     "04": {
+      "n": 306,
+      "top1": 0.02287581699346405,
+      "top5": 0.10457516339869281,
+      "mrr": 0.0860967296775036,
+      "median_rank": 36.0,
+      "mean_rank": 40.529411764705884
+     },
+     "05": {
+      "n": 306,
+      "top1": 0.026143790849673203,
+      "top5": 0.11764705882352941,
+      "mrr": 0.09441269324676009,
+      "median_rank": 33.5,
+      "mean_rank": 38.75816993464052
+     },
+     "06": {
+      "n": 306,
+      "top1": 0.032679738562091505,
+      "top5": 0.12745098039215685,
+      "mrr": 0.09438877262021565,
+      "median_rank": 39.5,
+      "mean_rank": 42.92483660130719
+     }
+    },
+    "per_fold": {
+     "2026": {
+      "n": 612,
+      "top1": 0.029411764705882353,
+      "top5": 0.14052287581699346,
+      "mrr": 0.10101940613925801,
+      "median_rank": 31.0,
+      "mean_rank": 38.13562091503268
+     },
+     "2027": {
+      "n": 612,
+      "top1": 0.027777777777777776,
+      "top5": 0.10620915032679738,
+      "mrr": 0.0916838274314617,
+      "median_rank": 34.0,
+      "mean_rank": 38.38562091503268
+     },
+     "2028": {
+      "n": 612,
+      "top1": 0.029411764705882353,
+      "top5": 0.11601307189542484,
+      "mrr": 0.09554949532213687,
+      "median_rank": 34.0,
+      "mean_rank": 37.81699346405229
+     }
+    },
+    "rank_histogram": {
+     "1": 53,
+     "2-5": 169,
+     "6-10": 185,
+     "11-25": 360,
+     "26-102": 1069
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 11,
+      "top1_losses": 11,
+      "top5_wins": 32,
+      "top5_losses": 37,
+      "promoted_2to5_to_1": 1,
+      "promoted_outside5_to_1": 10,
+      "demoted_top5_to_outside": 37,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 155,
+      "rank_worsened": 145,
+      "rank_equal": 6
+     },
+     "02": {
+      "top1_wins": 9,
+      "top1_losses": 10,
+      "top5_wins": 26,
+      "top5_losses": 31,
+      "promoted_2to5_to_1": 5,
+      "promoted_outside5_to_1": 4,
+      "demoted_top5_to_outside": 31,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 156,
+      "rank_worsened": 146,
+      "rank_equal": 4
+     },
+     "03": {
+      "top1_wins": 7,
+      "top1_losses": 8,
+      "top5_wins": 25,
+      "top5_losses": 34,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 5,
+      "demoted_top5_to_outside": 34,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 154,
+      "rank_worsened": 147,
+      "rank_equal": 5
+     },
+     "04": {
+      "top1_wins": 6,
+      "top1_losses": 3,
+      "top5_wins": 25,
+      "top5_losses": 20,
+      "promoted_2to5_to_1": 1,
+      "promoted_outside5_to_1": 5,
+      "demoted_top5_to_outside": 20,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 164,
+      "rank_worsened": 135,
+      "rank_equal": 7
+     },
+     "05": {
+      "top1_wins": 7,
+      "top1_losses": 5,
+      "top5_wins": 29,
+      "top5_losses": 26,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 7,
+      "demoted_top5_to_outside": 26,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 157,
+      "rank_worsened": 145,
+      "rank_equal": 4
+     },
+     "06": {
+      "top1_wins": 9,
+      "top1_losses": 4,
+      "top5_wins": 28,
+      "top5_losses": 15,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 6,
+      "demoted_top5_to_outside": 15,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 154,
+      "rank_worsened": 147,
+      "rank_equal": 5
+     }
+    },
+    "per_fold_transitions": {
+     "2026": {
+      "top1_wins": 15,
+      "top1_losses": 12,
+      "top5_wins": 64,
+      "top5_losses": 53,
+      "promoted_2to5_to_1": 5,
+      "promoted_outside5_to_1": 10,
+      "demoted_top5_to_outside": 53,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 306,
+      "rank_worsened": 296,
+      "rank_equal": 10
+     },
+     "2027": {
+      "top1_wins": 17,
+      "top1_losses": 11,
+      "top5_wins": 51,
+      "top5_losses": 52,
+      "promoted_2to5_to_1": 4,
+      "promoted_outside5_to_1": 13,
+      "demoted_top5_to_outside": 52,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 323,
+      "rank_worsened": 279,
+      "rank_equal": 10
+     },
+     "2028": {
+      "top1_wins": 17,
+      "top1_losses": 18,
+      "top5_wins": 50,
+      "top5_losses": 58,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 14,
+      "demoted_top5_to_outside": 58,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 311,
+      "rank_worsened": 290,
+      "rank_equal": 11
+     }
+    }
+   },
+   "final+block8": {
+    "overall": {
+     "n": 1836,
+     "top1": 0.0332244008714597,
+     "top5": 0.14161220043572983,
+     "mrr": 0.10432914862213732,
+     "median_rank": 30.0,
+     "mean_rank": 36.44934640522876
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 47,
+     "top1_losses": 31,
+     "top5_wins": 123,
+     "top5_losses": 83,
+     "promoted_2to5_to_1": 33,
+     "promoted_outside5_to_1": 14,
+     "demoted_top5_to_outside": 83,
+     "demoted_1_to_2to5": 20,
+     "rank_improved": 1047,
+     "rank_worsened": 726,
+     "rank_equal": 63
+    },
+    "top1_sign_test_p": 0.08878242522208005,
+    "top5_sign_test_p": 0.006442535307934738,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.008714596949891067,
+      0.0021786492374727667,
+      0.015250544662309367
+     ],
+     "top5": [
+      0.021786492374727667,
+      0.013616557734204789,
+      0.030501089324618733
+     ],
+     "mrr": [
+      0.013579621839223281,
+      0.006863688023916403,
+      0.02011425230428462
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 306,
+      "top1": 0.0457516339869281,
+      "top5": 0.17320261437908496,
+      "mrr": 0.1315601494916542,
+      "median_rank": 22.0,
+      "mean_rank": 28.637254901960784
+     },
+     "02": {
+      "n": 306,
+      "top1": 0.032679738562091505,
+      "top5": 0.1568627450980392,
+      "mrr": 0.10723673785347142,
+      "median_rank": 29.0,
+      "mean_rank": 36.04248366013072
+     },
+     "03": {
+      "n": 306,
+      "top1": 0.032679738562091505,
+      "top5": 0.1503267973856209,
+      "mrr": 0.10435717048577905,
+      "median_rank": 30.0,
+      "mean_rank": 35.86274509803921
+     },
+     "04": {
+      "n": 306,
+      "top1": 0.032679738562091505,
+      "top5": 0.10784313725490197,
+      "mrr": 0.09457160337292211,
+      "median_rank": 36.0,
+      "mean_rank": 39.77124183006536
+     },
+     "05": {
+      "n": 306,
+      "top1": 0.0196078431372549,
+      "top5": 0.13725490196078433,
+      "mrr": 0.09213088607511018,
+      "median_rank": 31.5,
+      "mean_rank": 37.091503267973856
+     },
+     "06": {
+      "n": 306,
+      "top1": 0.03594771241830065,
+      "top5": 0.12418300653594772,
+      "mrr": 0.096118344453887,
+      "median_rank": 38.0,
+      "mean_rank": 41.290849673202615
+     }
+    },
+    "per_fold": {
+     "2026": {
+      "n": 612,
+      "top1": 0.042483660130718956,
+      "top5": 0.16830065359477125,
+      "mrr": 0.11514022350627877,
+      "median_rank": 29.0,
+      "mean_rank": 36.23202614379085
+     },
+     "2027": {
+      "n": 612,
+      "top1": 0.021241830065359478,
+      "top5": 0.1111111111111111,
+      "mrr": 0.08923556801747652,
+      "median_rank": 31.0,
+      "mean_rank": 37.12091503267974
+     },
+     "2028": {
+      "n": 612,
+      "top1": 0.03594771241830065,
+      "top5": 0.1454248366013072,
+      "mrr": 0.10861165434265674,
+      "median_rank": 30.0,
+      "mean_rank": 35.995098039215684
+     }
+    },
+    "rank_histogram": {
+     "1": 61,
+     "2-5": 199,
+     "6-10": 176,
+     "11-25": 385,
+     "26-102": 1015
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 8,
+      "top1_losses": 6,
+      "top5_wins": 28,
+      "top5_losses": 21,
+      "promoted_2to5_to_1": 5,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 21,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 181,
+      "rank_worsened": 115,
+      "rank_equal": 10
+     },
+     "02": {
+      "top1_wins": 7,
+      "top1_losses": 7,
+      "top5_wins": 19,
+      "top5_losses": 17,
+      "promoted_2to5_to_1": 7,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 17,
+      "demoted_1_to_2to5": 4,
+      "rank_improved": 169,
+      "rank_worsened": 126,
+      "rank_equal": 11
+     },
+     "03": {
+      "top1_wins": 8,
+      "top1_losses": 6,
+      "top5_wins": 20,
+      "top5_losses": 16,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 5,
+      "demoted_top5_to_outside": 16,
+      "demoted_1_to_2to5": 4,
+      "rank_improved": 173,
+      "rank_worsened": 121,
+      "rank_equal": 12
+     },
+     "04": {
+      "top1_wins": 9,
+      "top1_losses": 3,
+      "top5_wins": 17,
+      "top5_losses": 11,
+      "promoted_2to5_to_1": 7,
+      "promoted_outside5_to_1": 2,
+      "demoted_top5_to_outside": 11,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 181,
+      "rank_worsened": 112,
+      "rank_equal": 13
+     },
+     "05": {
+      "top1_wins": 5,
+      "top1_losses": 5,
+      "top5_wins": 21,
+      "top5_losses": 12,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 2,
+      "demoted_top5_to_outside": 12,
+      "demoted_1_to_2to5": 5,
+      "rank_improved": 176,
+      "rank_worsened": 124,
+      "rank_equal": 6
+     },
+     "06": {
+      "top1_wins": 10,
+      "top1_losses": 4,
+      "top5_wins": 18,
+      "top5_losses": 6,
+      "promoted_2to5_to_1": 8,
+      "promoted_outside5_to_1": 2,
+      "demoted_top5_to_outside": 6,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 167,
+      "rank_worsened": 128,
+      "rank_equal": 11
+     }
+    },
+    "per_fold_transitions": {
+     "2026": {
+      "top1_wins": 19,
+      "top1_losses": 8,
+      "top5_wins": 52,
+      "top5_losses": 24,
+      "promoted_2to5_to_1": 13,
+      "promoted_outside5_to_1": 6,
+      "demoted_top5_to_outside": 24,
+      "demoted_1_to_2to5": 6,
+      "rank_improved": 346,
+      "rank_worsened": 242,
+      "rank_equal": 24
+     },
+     "2027": {
+      "top1_wins": 11,
+      "top1_losses": 9,
+      "top5_wins": 30,
+      "top5_losses": 28,
+      "promoted_2to5_to_1": 8,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 28,
+      "demoted_1_to_2to5": 6,
+      "rank_improved": 352,
+      "rank_worsened": 239,
+      "rank_equal": 21
+     },
+     "2028": {
+      "top1_wins": 17,
+      "top1_losses": 14,
+      "top5_wins": 41,
+      "top5_losses": 31,
+      "promoted_2to5_to_1": 12,
+      "promoted_outside5_to_1": 5,
+      "demoted_top5_to_outside": 31,
+      "demoted_1_to_2to5": 8,
+      "rank_improved": 349,
+      "rank_worsened": 245,
+      "rank_equal": 18
+     }
+    }
+   },
+   "block8+audio": {
+    "overall": {
+     "n": 1836,
+     "top1": 0.030501089324618737,
+     "top5": 0.13017429193899782,
+     "mrr": 0.09907909184262217,
+     "median_rank": 32.0,
+     "mean_rank": 37.450980392156865
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 51,
+     "top1_losses": 40,
+     "top5_wins": 180,
+     "top5_losses": 161,
+     "promoted_2to5_to_1": 14,
+     "promoted_outside5_to_1": 37,
+     "demoted_top5_to_outside": 161,
+     "demoted_1_to_2to5": 6,
+     "rank_improved": 943,
+     "rank_worsened": 858,
+     "rank_equal": 35
+    },
+    "top1_sign_test_p": 0.294469784568533,
+    "top5_sign_test_p": 0.32968832892434036,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.005991285403050109,
+      -0.002178649237472767,
+      0.01525054466230937
+     ],
+     "top5": [
+      0.010348583877995638,
+      -0.010348583877995655,
+      0.03159041394335512
+     ],
+     "mrr": [
+      0.008329565059708124,
+      -0.0011641210039340145,
+      0.018924385511640565
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 306,
+      "top1": 0.042483660130718956,
+      "top5": 0.1437908496732026,
+      "mrr": 0.11631571750917948,
+      "median_rank": 24.5,
+      "mean_rank": 31.062091503267975
+     },
+     "02": {
+      "n": 306,
+      "top1": 0.029411764705882353,
+      "top5": 0.13398692810457516,
+      "mrr": 0.10208516298638143,
+      "median_rank": 31.0,
+      "mean_rank": 36.27450980392157
+     },
+     "03": {
+      "n": 306,
+      "top1": 0.029411764705882353,
+      "top5": 0.11437908496732026,
+      "mrr": 0.09321621225521289,
+      "median_rank": 33.0,
+      "mean_rank": 37.333333333333336
+     },
+     "04": {
+      "n": 306,
+      "top1": 0.026143790849673203,
+      "top5": 0.12418300653594772,
+      "mrr": 0.09110432159497589,
+      "median_rank": 33.0,
+      "mean_rank": 39.666666666666664
+     },
+     "05": {
+      "n": 306,
+      "top1": 0.013071895424836602,
+      "top5": 0.13071895424836602,
+      "mrr": 0.09070570998432148,
+      "median_rank": 33.0,
+      "mean_rank": 37.947712418300654
+     },
+     "06": {
+      "n": 306,
+      "top1": 0.042483660130718956,
+      "top5": 0.13398692810457516,
+      "mrr": 0.10104742672566187,
+      "median_rank": 40.0,
+      "mean_rank": 42.42156862745098
+     }
+    },
+    "per_fold": {
+     "2026": {
+      "n": 612,
+      "top1": 0.03104575163398693,
+      "top5": 0.1437908496732026,
+      "mrr": 0.10320797088939723,
+      "median_rank": 30.5,
+      "mean_rank": 37.43464052287582
+     },
+     "2027": {
+      "n": 612,
+      "top1": 0.03104575163398693,
+      "top5": 0.12418300653594772,
+      "mrr": 0.09761736477818335,
+      "median_rank": 33.0,
+      "mean_rank": 37.58169934640523
+     },
+     "2028": {
+      "n": 612,
+      "top1": 0.029411764705882353,
+      "top5": 0.12254901960784313,
+      "mrr": 0.09641193986028593,
+      "median_rank": 32.0,
+      "mean_rank": 37.33660130718954
+     }
+    },
+    "rank_histogram": {
+     "1": 56,
+     "2-5": 183,
+     "6-10": 179,
+     "11-25": 366,
+     "26-102": 1052
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 12,
+      "top1_losses": 11,
+      "top5_wins": 35,
+      "top5_losses": 37,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 10,
+      "demoted_top5_to_outside": 37,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 153,
+      "rank_worsened": 148,
+      "rank_equal": 5
+     },
+     "02": {
+      "top1_wins": 8,
+      "top1_losses": 9,
+      "top5_wins": 27,
+      "top5_losses": 32,
+      "promoted_2to5_to_1": 4,
+      "promoted_outside5_to_1": 4,
+      "demoted_top5_to_outside": 32,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 158,
+      "rank_worsened": 140,
+      "rank_equal": 8
+     },
+     "03": {
+      "top1_wins": 9,
+      "top1_losses": 8,
+      "top5_wins": 26,
+      "top5_losses": 33,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 7,
+      "demoted_top5_to_outside": 33,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 153,
+      "rank_worsened": 150,
+      "rank_equal": 3
+     },
+     "04": {
+      "top1_wins": 7,
+      "top1_losses": 3,
+      "top5_wins": 29,
+      "top5_losses": 18,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 5,
+      "demoted_top5_to_outside": 18,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 166,
+      "rank_worsened": 135,
+      "rank_equal": 5
+     },
+     "05": {
+      "top1_wins": 3,
+      "top1_losses": 5,
+      "top5_wins": 33,
+      "top5_losses": 26,
+      "promoted_2to5_to_1": 0,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 26,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 159,
+      "rank_worsened": 138,
+      "rank_equal": 9
+     },
+     "06": {
+      "top1_wins": 12,
+      "top1_losses": 4,
+      "top5_wins": 30,
+      "top5_losses": 15,
+      "promoted_2to5_to_1": 4,
+      "promoted_outside5_to_1": 8,
+      "demoted_top5_to_outside": 15,
+      "demoted_1_to_2to5": 0,
+      "rank_improved": 154,
+      "rank_worsened": 147,
+      "rank_equal": 5
+     }
+    },
+    "per_fold_transitions": {
+     "2026": {
+      "top1_wins": 16,
+      "top1_losses": 12,
+      "top5_wins": 65,
+      "top5_losses": 52,
+      "promoted_2to5_to_1": 6,
+      "promoted_outside5_to_1": 10,
+      "demoted_top5_to_outside": 52,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 312,
+      "rank_worsened": 289,
+      "rank_equal": 11
+     },
+     "2027": {
+      "top1_wins": 19,
+      "top1_losses": 11,
+      "top5_wins": 63,
+      "top5_losses": 53,
+      "promoted_2to5_to_1": 5,
+      "promoted_outside5_to_1": 14,
+      "demoted_top5_to_outside": 53,
+      "demoted_1_to_2to5": 1,
+      "rank_improved": 324,
+      "rank_worsened": 279,
+      "rank_equal": 9
+     },
+     "2028": {
+      "top1_wins": 16,
+      "top1_losses": 17,
+      "top5_wins": 52,
+      "top5_losses": 56,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 13,
+      "demoted_top5_to_outside": 56,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 307,
+      "rank_worsened": 290,
+      "rank_equal": 15
+     }
+    }
+   },
+   "final+block8+audio": {
+    "overall": {
+     "n": 1836,
+     "top1": 0.029956427015250545,
+     "top5": 0.1514161220043573,
+     "mrr": 0.10554590147382269,
+     "median_rank": 30.0,
+     "mean_rank": 35.76797385620915
+    },
+    "transitions_vs_baseline": {
+     "top1_wins": 43,
+     "top1_losses": 33,
+     "top5_wins": 130,
+     "top5_losses": 72,
+     "promoted_2to5_to_1": 29,
+     "promoted_outside5_to_1": 14,
+     "demoted_top5_to_outside": 72,
+     "demoted_1_to_2to5": 23,
+     "rank_improved": 1055,
+     "rank_worsened": 712,
+     "rank_equal": 69
+    },
+    "top1_sign_test_p": 0.3018724904870079,
+    "top5_sign_test_p": 5.432159525818108e-05,
+    "subject_bootstrap_delta": {
+     "top1": [
+      0.005446623093681915,
+      -0.0032679738562091504,
+      0.014705882352941175
+     ],
+     "top5": [
+      0.03159041394335512,
+      0.022331154684095866,
+      0.04084967320261438
+     ],
+     "mrr": [
+      0.014796374690908632,
+      0.007459727454497296,
+      0.021730635476340975
+     ]
+    },
+    "per_subject": {
+     "01": {
+      "n": 306,
+      "top1": 0.0392156862745098,
+      "top5": 0.19607843137254902,
+      "mrr": 0.13087557299415245,
+      "median_rank": 22.0,
+      "mean_rank": 28.08169934640523
+     },
+     "02": {
+      "n": 306,
+      "top1": 0.032679738562091505,
+      "top5": 0.16993464052287582,
+      "mrr": 0.11462718159468349,
+      "median_rank": 29.5,
+      "mean_rank": 35.251633986928105
+     },
+     "03": {
+      "n": 306,
+      "top1": 0.02287581699346405,
+      "top5": 0.15359477124183007,
+      "mrr": 0.10188369027193586,
+      "median_rank": 30.0,
+      "mean_rank": 35.326797385620914
+     },
+     "04": {
+      "n": 306,
+      "top1": 0.03594771241830065,
+      "top5": 0.12418300653594772,
+      "mrr": 0.09729561340230261,
+      "median_rank": 34.0,
+      "mean_rank": 38.85947712418301
+     },
+     "05": {
+      "n": 306,
+      "top1": 0.013071895424836602,
+      "top5": 0.13398692810457516,
+      "mrr": 0.09055037280452313,
+      "median_rank": 31.0,
+      "mean_rank": 36.36601307189542
+     },
+     "06": {
+      "n": 306,
+      "top1": 0.03594771241830065,
+      "top5": 0.13071895424836602,
+      "mrr": 0.09804297777533853,
+      "median_rank": 36.0,
+      "mean_rank": 40.72222222222222
+     }
+    },
+    "per_fold": {
+     "2026": {
+      "n": 612,
+      "top1": 0.04084967320261438,
+      "top5": 0.1830065359477124,
+      "mrr": 0.1173861816436665,
+      "median_rank": 29.0,
+      "mean_rank": 35.53431372549019
+     },
+     "2027": {
+      "n": 612,
+      "top1": 0.014705882352941176,
+      "top5": 0.11437908496732026,
+      "mrr": 0.08906173240990153,
+      "median_rank": 30.5,
+      "mean_rank": 36.25326797385621
+     },
+     "2028": {
+      "n": 612,
+      "top1": 0.03431372549019608,
+      "top5": 0.1568627450980392,
+      "mrr": 0.1101897903679,
+      "median_rank": 30.0,
+      "mean_rank": 35.51633986928105
+     }
+    },
+    "rank_histogram": {
+     "1": 55,
+     "2-5": 223,
+     "6-10": 173,
+     "11-25": 375,
+     "26-102": 1010
+    },
+    "per_subject_transitions": {
+     "01": {
+      "top1_wins": 7,
+      "top1_losses": 7,
+      "top5_wins": 31,
+      "top5_losses": 17,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 4,
+      "demoted_top5_to_outside": 17,
+      "demoted_1_to_2to5": 5,
+      "rank_improved": 176,
+      "rank_worsened": 113,
+      "rank_equal": 17
+     },
+     "02": {
+      "top1_wins": 7,
+      "top1_losses": 7,
+      "top5_wins": 22,
+      "top5_losses": 16,
+      "promoted_2to5_to_1": 7,
+      "promoted_outside5_to_1": 0,
+      "demoted_top5_to_outside": 16,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 171,
+      "rank_worsened": 123,
+      "rank_equal": 12
+     },
+     "03": {
+      "top1_wins": 6,
+      "top1_losses": 7,
+      "top5_wins": 20,
+      "top5_losses": 15,
+      "promoted_2to5_to_1": 3,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 15,
+      "demoted_1_to_2to5": 5,
+      "rank_improved": 174,
+      "rank_worsened": 117,
+      "rank_equal": 15
+     },
+     "04": {
+      "top1_wins": 10,
+      "top1_losses": 3,
+      "top5_wins": 18,
+      "top5_losses": 7,
+      "promoted_2to5_to_1": 7,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 7,
+      "demoted_1_to_2to5": 2,
+      "rank_improved": 183,
+      "rank_worsened": 114,
+      "rank_equal": 9
+     },
+     "05": {
+      "top1_wins": 3,
+      "top1_losses": 5,
+      "top5_wins": 19,
+      "top5_losses": 11,
+      "promoted_2to5_to_1": 2,
+      "promoted_outside5_to_1": 1,
+      "demoted_top5_to_outside": 11,
+      "demoted_1_to_2to5": 5,
+      "rank_improved": 177,
+      "rank_worsened": 123,
+      "rank_equal": 6
+     },
+     "06": {
+      "top1_wins": 10,
+      "top1_losses": 4,
+      "top5_wins": 20,
+      "top5_losses": 6,
+      "promoted_2to5_to_1": 7,
+      "promoted_outside5_to_1": 3,
+      "demoted_top5_to_outside": 6,
+      "demoted_1_to_2to5": 3,
+      "rank_improved": 174,
+      "rank_worsened": 122,
+      "rank_equal": 10
+     }
+    },
+    "per_fold_transitions": {
+     "2026": {
+      "top1_wins": 19,
+      "top1_losses": 9,
+      "top5_wins": 54,
+      "top5_losses": 17,
+      "promoted_2to5_to_1": 13,
+      "promoted_outside5_to_1": 6,
+      "demoted_top5_to_outside": 17,
+      "demoted_1_to_2to5": 7,
+      "rank_improved": 350,
+      "rank_worsened": 237,
+      "rank_equal": 25
+     },
+     "2027": {
+      "top1_wins": 7,
+      "top1_losses": 9,
+      "top5_wins": 31,
+      "top5_losses": 27,
+      "promoted_2to5_to_1": 5,
+      "promoted_outside5_to_1": 2,
+      "demoted_top5_to_outside": 27,
+      "demoted_1_to_2to5": 6,
+      "rank_improved": 359,
+      "rank_worsened": 233,
+      "rank_equal": 20
+     },
+     "2028": {
+      "top1_wins": 17,
+      "top1_losses": 15,
+      "top5_wins": 45,
+      "top5_losses": 28,
+      "promoted_2to5_to_1": 11,
+      "promoted_outside5_to_1": 6,
+      "demoted_top5_to_outside": 28,
+      "demoted_1_to_2to5": 10,
+      "rank_improved": 346,
+      "rank_worsened": 242,
+      "rank_equal": 24
+     }
+    }
+   }
+  },
+  "diagnostics": {
+   "final_top_margin_when_correct_mean": 0.32750307189093697,
+   "final_top_margin_when_wrong_mean": 0.29441431199685614,
+   "n_target_rank2to5_in_final": 175,
+   "z_gap_to_winner_promoted_by_fusion_mean": 0.39308442852713843,
+   "z_gap_to_winner_not_promoted_mean": 0.441807853503966,
+   "block8_target_rank_when_fusion_demotes_out_of_top5": [
+    45,
+    34,
+    70,
+    31,
+    22,
+    27,
+    19,
+    33,
+    44,
+    39,
+    50,
+    33,
+    63,
+    66,
+    85,
+    45,
+    67,
+    54,
+    23,
+    31,
+    35,
+    79,
+    31,
+    64,
+    32,
+    56,
+    28,
+    20,
+    33,
+    24,
+    39,
+    23,
+    58,
+    45,
+    38,
+    40,
+    17,
+    29,
+    24,
+    43,
+    69,
+    75,
+    21,
+    87,
+    40,
+    65,
+    49,
+    46,
+    72,
+    54,
+    70,
+    80,
+    91,
+    55,
+    46,
+    39,
+    47,
+    31,
+    53,
+    24,
+    66,
+    53,
+    94,
+    42,
+    59,
+    36,
+    55,
+    72,
+    44,
+    34,
+    21,
+    65,
+    42,
+    55,
+    46,
+    61,
+    85,
+    19,
+    40,
+    81,
+    29,
+    48,
+    92
+   ],
+   "block8_target_rank_when_fusion_promotes_2to5_to_1": [
+    2,
+    2,
+    1,
+    2,
+    4,
+    1,
+    12,
+    2,
+    1,
+    3,
+    2,
+    3,
+    1,
+    1,
+    1,
+    3,
+    1,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    1,
+    4,
+    4,
+    1,
+    6,
+    6,
+    2,
+    4,
+    1,
+    3
+   ],
+   "final_vs_block8_rowwise_score_correlation_mean": 0.29210357955847027,
+   "final_vs_block8_rowwise_score_correlation_sd": 0.11738679297237074,
+   "final_vs_block8_top5_overlap_mean": 0.6868191721132898
+  }
+ }
+}

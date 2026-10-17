@@ -1,0 +1,7 @@
+{
+  "seed": 2026,
+  "validation_fraction": 0.2,
+  "ridge_alpha": 100.0,
+  "eeg_window_samples": [0, 1500],
+  "notes": "Use only arrays aligned with organizer-provided training records. Fit all transforms within a training fold."
+}

@@ -1,0 +1,7 @@
+experiment,method,target_components,target_window_ms,score_window_ms,seed,subject,n_train,top1,top5,seconds,artifact
+confirm_clip_final,ridge,64,0:3000,50:600,confirmation,01,866,0.049019607843137254,0.14705882352941177,0.5768138749990612,experiments/paired_predictions/confirm_clip_final_seedconfirmation_sub01.npz
+confirm_clip_final,ridge,64,0:3000,50:600,confirmation,02,870,0.029411764705882353,0.19607843137254902,0.611283917001856,experiments/paired_predictions/confirm_clip_final_seedconfirmation_sub02.npz
+confirm_clip_final,ridge,64,0:3000,50:600,confirmation,03,859,0.0392156862745098,0.14705882352941177,0.49827745799848344,experiments/paired_predictions/confirm_clip_final_seedconfirmation_sub03.npz
+confirm_clip_final,ridge,64,0:3000,50:600,confirmation,04,845,0.0,0.058823529411764705,0.5063208329993358,experiments/paired_predictions/confirm_clip_final_seedconfirmation_sub04.npz
+confirm_clip_final,ridge,64,0:3000,50:600,confirmation,05,850,0.029411764705882353,0.10784313725490197,0.4824767919999431,experiments/paired_predictions/confirm_clip_final_seedconfirmation_sub05.npz
+confirm_clip_final,ridge,64,0:3000,50:600,confirmation,06,748,0.0,0.0784313725490196,0.41334770799949183,experiments/paired_predictions/confirm_clip_final_seedconfirmation_sub06.npz

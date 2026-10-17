@@ -1,0 +1,53 @@
+{
+ "status": "frozen 2026-10-17 by prespecified rule in experiments/nested_rerank_protocol.md (inner-fold selection, H2 not used)",
+ "encoder": {
+  "method": "ridge (scripts/clip_controlled_cv.py::ForwardRegressor)",
+  "feature_pca_variance": 0.95,
+  "ridge_alphas": "logspace(-3,6,20)",
+  "eeg": "decimate x5 FIR zero-phase -> 100 Hz, target 0-3000 ms",
+  "score": "organizer correlation, 50-600 ms",
+  "fit": "per subject, all training recordings"
+ },
+ "fusion": "weighted mean of per-row z-scored score matrices (src.retrieval.weighted_score_ensemble)",
+ "constituents": [
+  {
+   "name": "final_clip",
+   "weight": 0.45,
+   "train_features": "features/all_train_clip_features.npy",
+   "test_features": "features/test_clip_features.npy",
+   "model": "OpenCLIP ViT-B-32 openai QuickGELU, projected embedding, mean of 8 frames"
+  },
+  {
+   "name": "clip_block8",
+   "weight": 0.45,
+   "train_features": "features/all_train_clip_intermediate_block8.npy",
+   "test_features": "features/test_clip_intermediate_block8.npy",
+   "model": "OpenCLIP ViT-B-32 openai, CLS of zero-indexed block 7, mean of 8 frames"
+  },
+  {
+   "name": "audio_simple",
+   "weight": 0.1,
+   "train_features": "features/all_train_audio_simple_features.npy",
+   "test_features": "features/test_audio_simple_features.npy",
+   "model": "12 RMS envelope bins + mean/std of 32 log-mel bands, 16 kHz mono"
+  }
+ ],
+ "candidate_ids": "manifests/test_candidate_ids.npy (1001..1102, ascending, column map)",
+ "evidence": {
+  "inner_5fold": {
+   "top1": 0.0343,
+   "top5": 0.1307
+  },
+  "outer_H2": {
+   "top1": 0.0327,
+   "top5": 0.1373
+  },
+  "final_clip_outer_H2": {
+   "top1": 0.0327,
+   "top5": 0.1144
+  }
+ },
+ "role": "best_top1",
+ "config_id": "C_final_block8_audio_45_45_10",
+ "note": "All three prespecified selection rules chose the same configuration on inner validation; files are kept separate so a future rule change cannot silently alter another role."
+}

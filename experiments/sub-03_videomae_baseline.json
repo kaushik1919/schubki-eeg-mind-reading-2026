@@ -1,0 +1,6 @@
+{
+  "n_training_recordings": 961,
+  "pca_components": 310,
+  "ridge_alpha": 12742.749857031322,
+  "train_seconds": 0.7962433339998825
+}

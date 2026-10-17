@@ -1,0 +1,49 @@
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+credentials*.json
+*.token
+.netrc
+
+# Organizer-provided competition materials (not redistributed)
+eeg-mind-reading-challenge/
+/01_preprocess_and_train_model.ipynb
+/02_predict_movies.ipynb
+/Mind Reading Using Machine Learning and EEG.pdf
+/Video-Context.txt
+data/*
+!data/.gitkeep
+
+# Stimulus media, extracted audio and frames
+*.mp4
+*.wav
+*.mp3
+*.m4a
+*.flac
+frames*/
+
+# Large feature caches (reproducible with scripts/extract_*.py)
+features/*.npy
+
+# Large legacy checkpoints and score dumps (reproducible; see README)
+experiments/*.joblib
+experiments/**/*.npz
+experiments/*.log
+outputs/final_model_c/models/
+outputs/final_model_c/scores/
+
+# Temporary outputs
+tmp/
+*.tmp

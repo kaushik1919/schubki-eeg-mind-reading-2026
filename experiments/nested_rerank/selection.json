@@ -1,0 +1,12 @@
+{
+ "K_star": 5,
+ "best_top1": "C_final_block8_audio",
+ "best_top5": "C_final_block8_audio",
+ "balanced": "C_final_block8_audio",
+ "candidates": [
+  "A_final",
+  "B_final_block8",
+  "C_final_block8_audio",
+  "D5_rerank_top5"
+ ]
+}
