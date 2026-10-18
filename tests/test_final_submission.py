@@ -160,14 +160,22 @@ def test_missing_audio_maps_to_deterministic_silence_vector():
 
 @needs_outputs
 @pytest.mark.parametrize("subject", HIDDEN)
-def test_root_submission_is_promoted_model_c_in_test_file_order(subject, test_features):
-    root = ROOT / f"sub-{subject}_ranked_candidate_list.npy"
-    if not root.exists():
-        pytest.skip("root submission absent")
-    r = np.load(root, allow_pickle=False)
-    assert r.shape == (102, 102) and np.issubdtype(r.dtype, np.integer)
-    validate_rankings(r)
-    assert sha(root) == sha(OUT / root.name)
+def test_model_c_checkpoint_reproduces_its_versioned_submission_in_file_order(subject, test_features):
+    r = np.load(OUT / f"sub-{subject}_ranked_candidate_list.npy", allow_pickle=False)
     model = joblib.load(OUT / "models" / f"sub-{subject}_model_c.joblib")["model"]
     rerun, _, _ = model.rank(load_eeg(DATA / "tst" / f"sub-{subject}_tst.npy"), test_features, CANDIDATE_IDS)
     assert np.array_equal(rerun, r)  # row i == test recording i in original file order
+
+
+@needs_outputs
+@pytest.mark.parametrize("subject", HIDDEN)
+def test_root_submission_matches_recorded_promoted_source(subject):
+    root = ROOT / f"sub-{subject}_ranked_candidate_list.npy"
+    record = ROOT / "outputs" / "ROOT_SUBMISSION.json"
+    if not root.exists() or not record.exists():
+        pytest.skip("root submission or promotion record absent")
+    rec = json.loads(record.read_text()); name = root.name
+    r = np.load(root, allow_pickle=False)
+    assert r.shape == (102, 102) and np.issubdtype(r.dtype, np.integer)
+    validate_rankings(r)
+    assert sha(root) == rec["files"][name]["sha256"] == sha(ROOT / rec["source"] / name)

@@ -1,0 +1,62 @@
+{
+ "B_train_log": {
+  "2050": {
+   "best_epoch": 51,
+   "inner_val_mrr": 0.1645597352963631,
+   "n_params": 66045
+  },
+  "2051": {
+   "best_epoch": 71,
+   "inner_val_mrr": 0.16773324160167769,
+   "n_params": 66045
+  },
+  "2052": {
+   "best_epoch": 57,
+   "inner_val_mrr": 0.16928430868317443,
+   "n_params": 66045
+  },
+  "2053": {
+   "best_epoch": 93,
+   "inner_val_mrr": 0.166591587280312,
+   "n_params": 66045
+  },
+  "2054": {
+   "best_epoch": 101,
+   "inner_val_mrr": 0.17167663459489782,
+   "n_params": 66045
+  }
+ },
+ "subjects": {
+  "05": {
+   "test_eeg_sha256": "76ef8a14c3f1265643ce0c74ea072fdb5c3c2a5db4b8fe8c453eeb5e2825e055",
+   "files": {
+    "S1/independent": "9ec816a4d38ade5c454ee110f7aaf5eebea7a644d0cc62313773ed5d242bbb8b",
+    "S1/sinkhorn_t0.5": "42916b3b46fe757adba04fdd81c5eaabea3988859bcaf6b4b48cf031a70cab87",
+    "S3/independent": "8617a074c9921bbde1ff9abdb54c000067ffbb6be93e70bc47b114614557b102",
+    "S3/sinkhorn_t0.5": "86a46f7b199f8fdef60136fee8f29aaf4bbcf8645d695cad73a628f42272e436"
+   },
+   "role": "hidden"
+  },
+  "06": {
+   "test_eeg_sha256": "febb7c2e904f4d80e3dce7b11246e4aabf92e9358142df68eea766dc52f3f65f",
+   "files": {
+    "S1/independent": "ae7884af17c825184254d59927f1f10edc6170d61e162778526c5032980fe0ea",
+    "S1/sinkhorn_t0.5": "46418ce3dbab9e19937fcfacae6dfcbadfab82d13b48d80a89d51645284ae369",
+    "S3/independent": "c612371ab2622c4db02251be7d2e8a8a0454f5604c2ba44ac00ba8397c89212b",
+    "S3/sinkhorn_t0.5": "71f33d66a3394fcbcc992827c0b1f874035ea0c5ca40410b9b6fd609e6407930"
+   },
+   "role": "hidden"
+  },
+  "01": {
+   "test_eeg_sha256": "582bc2b67b297188590adc7ad4b2dc24145f645129810488a3731813f63252c6",
+   "files": {
+    "S1/independent": "4e798edcb0c5d15281cfb2cea7b96f3bef46b9540c9b24bdad49970ed2e9a99d",
+    "S1/sinkhorn_t0.5": "511d098e5fe45020180aacbcd6bfbf4005ecb1e968df840dbe7c3a0ec6711628",
+    "S3/independent": "fd10b647a4fdd399822159d71cddfd7b301b028f8ec2981fc0156d8b956ab0ad",
+    "S3/sinkhorn_t0.5": "4bcf643708bc33fd03957a154d76d4733cbf9e717bd600d60995563a1ad430c1"
+   },
+   "role": "format_check"
+  }
+ },
+ "total_s": 646.9162610410003
+}

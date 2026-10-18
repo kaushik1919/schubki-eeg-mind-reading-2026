@@ -1,0 +1,14 @@
+{
+ "source": "outputs/final_ensemble_v1/S3/independent",
+ "manifest": "outputs/final_ensemble_v1/MANIFEST.sha256",
+ "files": {
+  "sub-05_ranked_candidate_list.npy": {
+   "replaced_sha256": "7921fbf58bc2729e188e669ff4ecb8e155884a98fbcbab243ebc10a467e2ad35",
+   "sha256": "8617a074c9921bbde1ff9abdb54c000067ffbb6be93e70bc47b114614557b102"
+  },
+  "sub-06_ranked_candidate_list.npy": {
+   "replaced_sha256": "e252e4c8cc9c42bcd141bc1ced2084cc5225f87aed8c3148da32f289a4b0a1f1",
+   "sha256": "c612371ab2622c4db02251be7d2e8a8a0454f5604c2ba44ac00ba8397c89212b"
+  }
+ }
+}

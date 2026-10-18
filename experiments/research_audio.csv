@@ -1,0 +1,7 @@
+experiment,method,target_components,target_window_ms,score_window_ms,seed,subject,n_train,top1,top5,seconds,artifact
+research_audio,ridge,64,0:3000,50:600,confirmation,01,866,0.00980392156862745,0.058823529411764705,0.2971147499993094,experiments/paired_predictions/research_audio_seedconfirmation_sub01.npz
+research_audio,ridge,64,0:3000,50:600,confirmation,02,870,0.0,0.0392156862745098,0.29480516699914006,experiments/paired_predictions/research_audio_seedconfirmation_sub02.npz
+research_audio,ridge,64,0:3000,50:600,confirmation,03,859,0.0196078431372549,0.08823529411764706,0.27817775000221445,experiments/paired_predictions/research_audio_seedconfirmation_sub03.npz
+research_audio,ridge,64,0:3000,50:600,confirmation,04,845,0.0,0.049019607843137254,0.27503479199731373,experiments/paired_predictions/research_audio_seedconfirmation_sub04.npz
+research_audio,ridge,64,0:3000,50:600,confirmation,05,850,0.00980392156862745,0.06862745098039216,0.2787509579975449,experiments/paired_predictions/research_audio_seedconfirmation_sub05.npz
+research_audio,ridge,64,0:3000,50:600,confirmation,06,748,0.0196078431372549,0.0784313725490196,0.24398808399928384,experiments/paired_predictions/research_audio_seedconfirmation_sub06.npz

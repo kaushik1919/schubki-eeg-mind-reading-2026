@@ -1,0 +1,101 @@
+{
+ "inner_val_fraction": 0.1,
+ "base": {
+  "seed": 2050,
+  "embed_dim": 128,
+  "dropout": 0.25,
+  "lr": 0.001,
+  "weight_decay": 0.1,
+  "temperature": 0.07,
+  "videos_per_batch": 64,
+  "max_epochs": 200,
+  "patience": 25,
+  "grad_clip": 1.0,
+  "max_shift": 2,
+  "amp_jitter": 0.1
+ },
+ "head": {
+  "proj_dim": 128,
+  "hidden": 256,
+  "dropout": 0.1
+ },
+ "experiments": {
+  "A_block8": {
+   "modalities": [
+    "clip_block8"
+   ],
+   "eeg_eeg_weight": 0.0
+  },
+  "B_dinov2": {
+   "modalities": [
+    "dinov2s"
+   ],
+   "eeg_eeg_weight": 0.0
+  },
+  "C_clap": {
+   "modalities": [
+    "clap"
+   ],
+   "eeg_eeg_weight": 0.0
+  },
+  "D_dinov2_clap": {
+   "modalities": [
+    "dinov2s",
+    "clap"
+   ],
+   "eeg_eeg_weight": 0.0
+  },
+  "E_block8_dinov2_clap": {
+   "modalities": [
+    "clip_block8",
+    "dinov2s",
+    "clap"
+   ],
+   "eeg_eeg_weight": 0.0
+  },
+  "A_block8_e2e": {
+   "modalities": [
+    "clip_block8"
+   ],
+   "eeg_eeg_grid": [
+    0.5,
+    2.0
+   ]
+  },
+  "D_dinov2_clap_e2e": {
+   "modalities": [
+    "dinov2s",
+    "clap"
+   ],
+   "eeg_eeg_grid": [
+    0.5,
+    2.0
+   ]
+  },
+  "E_block8_dinov2_clap_e2e": {
+   "modalities": [
+    "clip_block8",
+    "dinov2s",
+    "clap"
+   ],
+   "eeg_eeg_grid": [
+    0.5,
+    2.0
+   ]
+  },
+  "B2_dinov2b": {
+   "modalities": [
+    "dinov2b"
+   ],
+   "eeg_eeg_weight": 0.0
+  },
+  "D2_dinov2b_clap": {
+   "modalities": [
+    "dinov2b",
+    "clap"
+   ],
+   "eeg_eeg_weight": 0.0
+  }
+ },
+ "notes": "Encoder/optimiser identical to configs/frozen_contrastive_candidate.json. Phase 3 runs use eeg_eeg_weight 0 (pure symmetric EEG<->stimulus multi-positive loss); *_e2e runs select w on grouped inner validation."
+}

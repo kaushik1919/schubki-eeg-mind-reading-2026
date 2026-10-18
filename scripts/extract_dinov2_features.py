@@ -41,12 +41,13 @@ def main() -> None:
     parser.add_argument("--video-dir", required=True); parser.add_argument("--ids", required=True); parser.add_argument("--output", required=True)
     parser.add_argument("--frames", type=int, default=8); parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--device", choices=("auto", "mps", "cpu"), default="auto")
+    parser.add_argument("--model", default=MODEL_NAME, help="timm DINOv2 model name (default keeps the cached ViT-S/14 features reproducible)")
     parser.add_argument("--checkpoint-every", type=int, default=25, help="Persist partial feature matrix every N videos; reruns resume it")
     args = parser.parse_args(); ids = np.load(args.ids, allow_pickle=False).astype(np.int64)
     if ids.ndim != 1 or len(np.unique(ids)) != len(ids): raise ValueError("ids must be a one-dimensional array of unique stimulus IDs")
     device = "mps" if args.device == "auto" and torch.backends.mps.is_available() else ("cpu" if args.device == "auto" else args.device)
     if device == "mps" and not torch.backends.mps.is_available(): raise RuntimeError("MPS was requested but is unavailable")
-    model = timm.create_model(MODEL_NAME, pretrained=True, num_classes=0).to(device).eval()
+    model = timm.create_model(args.model, pretrained=True, num_classes=0).to(device).eval()
     preprocess = create_transform(**resolve_model_data_config(model), is_training=False)
     output = Path(args.output)
     vectors = list(np.load(output, allow_pickle=False)) if output.exists() else []
@@ -62,7 +63,7 @@ def main() -> None:
                 output.parent.mkdir(parents=True, exist_ok=True)
                 np.save(output, np.stack(vectors).astype(np.float32), allow_pickle=False)
                 print(f"{position}/{len(ids)} videos", flush=True)
-    print(f"Saved {output}: {(len(ids), len(vectors[0]))}; model={MODEL_NAME}; device={device}")
+    print(f"Saved {output}: {(len(ids), len(vectors[0]))}; model={args.model}; device={device}")
 
 
 if __name__ == "__main__": main()
