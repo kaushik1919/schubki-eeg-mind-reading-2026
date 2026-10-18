@@ -67,7 +67,7 @@ def positions_by_subject(enc, head, X, S, V, feats, mask, device, adapters):
     return res
 
 
-def train_one(cfg, X, S, V, feats, train_mask, val_mask, device, seed, variant, log, make_encoder=None):
+def train_one(cfg, X, S, V, feats, train_mask, val_mask, device, seed, variant, log, make_encoder=None, make_head=None):
     torch.manual_seed(seed); np.random.seed(seed)
     adapters = variant in ("C", "D", "E")
     if make_encoder:
@@ -77,7 +77,7 @@ def train_one(cfg, X, S, V, feats, train_mask, val_mask, device, seed, variant, 
     else:
         enc = EEGNetEncoder(dropout=cfg["dropout"], embed_dim=cfg["embed_dim"], n_subjects=len(SUBJECTS) if adapters else None).to(device)
     enc = enc.to(device)
-    head = VideoHead(feats.shape[1], cfg["embed_dim"]).to(device)
+    head = (make_head() if make_head else VideoHead(feats.shape[1], cfg["embed_dim"])).to(device)
     logit_scale = torch.nn.Parameter(torch.tensor(np.log(1 / cfg["temperature"]), dtype=torch.float32, device=device))
     params = list(enc.parameters()) + list(head.parameters()) + [logit_scale]
     opt = torch.optim.AdamW(params, lr=cfg["lr"], weight_decay=cfg["weight_decay"])
