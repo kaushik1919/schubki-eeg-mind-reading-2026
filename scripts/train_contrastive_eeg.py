@@ -123,6 +123,7 @@ def main() -> None:
     ap.add_argument("--search", action="store_true", help="hyperparameter search on fold-0 inner validation only")
     ap.add_argument("--data-root", default="eeg-mind-reading-challenge")
     ap.add_argument("--out-dir", default="experiments/contrastive_eeg")
+    ap.add_argument("--outer-seed", type=int, default=OUTER_SEED, help="partition seed for the 6 outer folds")
     ap.add_argument("--device", default="mps" if torch.backends.mps.is_available() else "cpu")
     ap.add_argument("--seed", type=int, default=None, help="override base seed")
     ap.add_argument("--target", default=None, help="override target feature cache (rows = IDs 1..1000)")
@@ -134,7 +135,7 @@ def main() -> None:
     if feats.shape[0] != 1000: raise ValueError("target features must have one row per training ID 1..1000")
     feats = feats / np.linalg.norm(feats, axis=1, keepdims=True)
     shared = common_ids({s: ids[S == k] for k, s in enumerate(SUBJECTS)})
-    folds = disjoint_inner_folds(shared, exclude=np.array([], np.int64), n_folds=6, size=102, seed=OUTER_SEED)
+    folds = disjoint_inner_folds(shared, exclude=np.array([], np.int64), n_folds=6, size=102, seed=a.outer_seed)
     grid = cfg_all["search_grid"] if a.search else [cfg_all["base"]]
     for o in ([0] if a.search else a.folds):
         test_mask = np.isin(ids, folds[o]); train_videos = np.unique(ids[~test_mask])

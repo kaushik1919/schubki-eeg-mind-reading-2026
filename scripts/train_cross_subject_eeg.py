@@ -116,11 +116,11 @@ def main() -> None:
     ap.add_argument("--config", default="configs/cross_subject_eeg.json"); ap.add_argument("--folds", nargs="+", type=int, default=list(range(6)))
     ap.add_argument("--variants", nargs="+", default=["B", "C", "D"]); ap.add_argument("--out-dir", default="experiments/cross_subject_eeg")
     ap.add_argument("--data-root", default="eeg-mind-reading-challenge"); ap.add_argument("--device", default="mps" if torch.backends.mps.is_available() else "cpu")
-    ap.add_argument("--seed", type=int, default=None); ap.add_argument("--tag-suffix", default="")
+    ap.add_argument("--seed", type=int, default=None); ap.add_argument("--tag-suffix", default=""); ap.add_argument("--outer-seed", type=int, default=OUTER_SEED)
     a = ap.parse_args(); cfg_all = json.loads(Path(a.config).read_text()); cfg = cfg_all["base"]; out = Path(a.out_dir); out.mkdir(parents=True, exist_ok=True)
     if a.seed is not None: cfg["seed"] = a.seed
     ids, raw, S = load_all(Path(a.data_root)); feats = np.load(TARGET).astype(np.float32); feats /= np.linalg.norm(feats, axis=1, keepdims=True)
-    folds = disjoint_inner_folds(common_ids({s: ids[S == k] for k, s in enumerate(SUBJECTS)}), exclude=np.array([], np.int64), n_folds=6, size=102, seed=OUTER_SEED)
+    folds = disjoint_inner_folds(common_ids({s: ids[S == k] for k, s in enumerate(SUBJECTS)}), exclude=np.array([], np.int64), n_folds=6, size=102, seed=a.outer_seed)
     for o in a.folds:
         test = np.isin(ids, folds[o]); tv = np.unique(ids[~test])
         val_videos = np.random.default_rng(3000 + o).choice(tv, int(round(cfg_all["inner_val_fraction"] * len(tv))), replace=False)
