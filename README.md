@@ -2,7 +2,7 @@
 
 ## Overview
 
-Given a three-second EEG recording, rank 102 candidate videos from most to least likely to have been watched during that recording. The submitted system is a linear forward encoding model: frozen video and audio features predict the EEG response to each candidate, and candidates are ranked by correlation between predicted and measured EEG.
+Given a three-second EEG recording, rank 102 candidate videos from most to least likely to have been watched during that recording. The submitted system (S3) fuses three scorers. The first is a linear forward encoding model (Model C), in which frozen video and audio features predict each candidate's EEG response and candidates are ranked by correlation with the measured EEG. The other two are compact EEG encoders trained across all six subjects to embed EEG next to CLIP features of the watched video. The full methodology is in [METHODOLOGY.md](METHODOLOGY.md).
 
 ## Dataset
 
@@ -152,8 +152,9 @@ Submission integrity and promotion:
 
 ```bash
 .venv/bin/python -m pytest -q
-.venv/bin/python scripts/promote_submission.py            # validate only
-.venv/bin/python scripts/promote_submission.py --confirm  # back up root files, then promote
+S=outputs/final_ensemble_v1/S3/independent; M=outputs/final_ensemble_v1/MANIFEST.sha256
+.venv/bin/python scripts/promote_submission.py --source $S --manifest $M            # validate only
+.venv/bin/python scripts/promote_submission.py --source $S --manifest $M --confirm  # back up root files, then promote
 ```
 
 ## Repository Structure
@@ -185,14 +186,9 @@ Excluded from Git and reproducible with the commands above: organizer data and d
 
 | File | SHA-256 |
 |---|---|
-| `sub-05_ranked_candidate_list.npy` | `7921fbf58bc2729e188e669ff4ecb8e155884a98fbcbab243ebc10a467e2ad35` |
-| `sub-06_ranked_candidate_list.npy` | `e252e4c8cc9c42bcd141bc1ced2084cc5225f87aed8c3148da32f289a4b0a1f1` |
+| `sub-05_ranked_candidate_list.npy` | `8617a074c9921bbde1ff9abdb54c000067ffbb6be93e70bc47b114614557b102` |
+| `sub-06_ranked_candidate_list.npy` | `c612371ab2622c4db02251be7d2e8a8a0454f5604c2ba44ac00ba8397c89212b` |
 
-The root files above are frozen Model C. The stronger S3 predictions are stored separately and have not replaced them:
-
-| File | SHA-256 |
-|---|---|
-| `outputs/final_ensemble_v1/S3/independent/sub-05_ranked_candidate_list.npy` | `8617a074c9921bbde1ff9abdb54c000067ffbb6be93e70bc47b114614557b102` |
-| `outputs/final_ensemble_v1/S3/independent/sub-06_ranked_candidate_list.npy` | `c612371ab2622c4db02251be7d2e8a8a0454f5604c2ba44ac00ba8397c89212b` |
+The root files are the S3 ensemble with independent per-recording ranking, promoted from `outputs/final_ensemble_v1/S3/independent/` (record: `outputs/ROOT_SUBMISSION.json`). The previous Model C files (`7921fbf5...`, `e252e4c8...`) are backed up in `outputs/previous_root_submissions/` and remain in `outputs/final_model_c/`.
 
 Each file is an integer array of shape (102, 102). Row i corresponds to recording i of `tst/sub-XX_tst.npy` in original order and contains every candidate ID 1001-1102 exactly once, ordered from most to least likely.
